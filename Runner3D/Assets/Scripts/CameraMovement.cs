@@ -3,6 +3,12 @@ using System.Collections;
 
 public class CameraMovement : MonoBehaviour {
 
+	public enum Looking {
+		l3D, lTop, lProfile
+	};
+
+	public Looking cLooking = Looking.l3D;
+
 	public float smoothTime = 0.3F;
 	private Vector3 velocity = Vector3.zero;
 	private Vector3 angularVelocity = Vector3.zero;
@@ -15,11 +21,6 @@ public class CameraMovement : MonoBehaviour {
 	public Vector3 tProfile;
 	public Vector3 rProfile;
 
-	public Looking cLooking = Looking.l3D;
-
-	public enum Looking {
-		l3D, lTop, lProfile
-	};
 
 	// Use this for initialization
 	void Start () {
@@ -55,6 +56,7 @@ public class CameraMovement : MonoBehaviour {
 		case Looking.lProfile:
 			targetPosition = tProfile;
 			targetRotation = rProfile;
+			if (transform.localEulerAngles.y > targetRotation.y + 360) targetRotation.y += 360;
 			break;
 		case Looking.lTop:
 			targetPosition = tTop;
@@ -63,14 +65,22 @@ public class CameraMovement : MonoBehaviour {
 		}
 		if (moving) {
 			transform.localPosition = Vector3.SmoothDamp (transform.localPosition, targetPosition, ref velocity, smoothTime);
-			if (Vector3.Distance (transform.localPosition, targetPosition) < 0.01) {
+			if (Vector3.Distance (transform.localPosition, targetPosition) < 0.0001) {
 				moving = false;
+				velocity = Vector3.zero;
 			}
 		}
 		if (rotating) {
-			transform.localEulerAngles = Vector3.SmoothDamp (transform.localEulerAngles, targetRotation, ref angularVelocity, smoothTime);
-			if (Vector3.Distance (transform.localEulerAngles, targetRotation) < 1) {
+			Vector3 auxTargetRotation = targetRotation;
+			if (Mathf.Abs(targetRotation.y - transform.localEulerAngles.y) > 180) {
+				if (transform.localEulerAngles.y > targetRotation.y) auxTargetRotation.y += 360;
+				else auxTargetRotation.y -= 360;
+			}
+			Vector3 rotation = Vector3.SmoothDamp (transform.localEulerAngles, auxTargetRotation, ref angularVelocity, smoothTime);
+			transform.localEulerAngles = rotation;
+			if (Vector3.Distance (transform.localEulerAngles, targetRotation) < 0.001) {
 				rotating = false;
+				angularVelocity = Vector3.zero;
 			}
 		}
 	}
