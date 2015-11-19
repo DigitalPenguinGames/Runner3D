@@ -9,7 +9,7 @@ public class CameraMovement : MonoBehaviour {
 
 	public Looking cLooking = Looking.l3D;
 
-	public float smoothTime = 0.3F;
+	public float smoothTime = 0.3f;
 	private Vector3 velocity = Vector3.zero;
 	private Vector3 angularVelocity = Vector3.zero;
 	private bool moving = true;
@@ -78,10 +78,10 @@ public class CameraMovement : MonoBehaviour {
 			}
 			Vector3 rotation = Vector3.SmoothDamp (transform.localEulerAngles, auxTargetRotation, ref angularVelocity, smoothTime);
 			transform.localEulerAngles = rotation;
-			if (Vector3.Distance (transform.localEulerAngles, targetRotation) < 0.001) {
+			/*if (Vector3.Distance (transform.localEulerAngles, auxTargetRotation) < 0.00001) {
 				rotating = false;
 				angularVelocity = Vector3.zero;
-			}
+			}*/
 		}
 	}
 }
