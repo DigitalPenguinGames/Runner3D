@@ -69,3 +69,6 @@ Runner3D/Runner3D.sln
 Runner3D/Runner3D-csharp.sln
 Runner3D/Assembly-CSharp-Editor-vs.csproj
 Runner3D/Assembly-CSharp-Editor.csproj
+*.suo
+Runner3D/Runner3D.CSharp.Plugins.csproj
+*.csproj
