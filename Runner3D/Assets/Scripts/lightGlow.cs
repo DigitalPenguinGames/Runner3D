@@ -19,7 +19,7 @@ public class lightGlow : MonoBehaviour {
 
         float delta = Time.fixedDeltaTime;
         timer += delta;
-        this.GetComponent<Light>().range = 3 + Mathf.Max(0.3f*Mathf.Sin(timer/2), Mathf.Sin(timer));
+        this.GetComponent<Light>().range = 3.2f + Mathf.Max(Mathf.Sin(timer/2), Mathf.Sin(timer));
 
 
     }
