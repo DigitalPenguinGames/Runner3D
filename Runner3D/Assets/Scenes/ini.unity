@@ -173,8 +173,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f2b6f9b89c0234c4d8c08d9ee058fde3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cam: {fileID: 1895836797}
-  jumpSpeed: .0199999996
+  jumpSpeed: .0799999982
   movementSpeed: 10
   rotationSpeed: 500
   playerVelocity: 0

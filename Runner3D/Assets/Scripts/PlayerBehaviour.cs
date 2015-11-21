@@ -1,11 +1,9 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class PlayerBehaviour : MonoBehaviour
-{
+public class PlayerBehaviour : MonoBehaviour {
 
-    public Camera cam;
-    private Rigidbody rb;
+    private Camera cam;
     private Vector3 vel = new Vector3(0.0f, 0.0f, 0.0f);
 
     public float jumpSpeed = 0.02f;
@@ -18,7 +16,7 @@ public class PlayerBehaviour : MonoBehaviour
     
 
     void Start()    {
-        rb = GetComponent<Rigidbody>();
+        cam = GameObject.FindObjectOfType<Camera>();
     }
 
 
@@ -35,7 +33,7 @@ public class PlayerBehaviour : MonoBehaviour
         transform.Rotate(rotationSpeed * Time.deltaTime, 0.0f, 0.0f);
 
         // if Costat
-        if (cam.transform.position.x != 0){
+        if (cam.GetComponent<CameraMovement>().cLooking == Looking.lProfile) {
 
             if (this.transform.position.y > 0.2){
                 vel.y -= jumpSpeed/8;
@@ -48,33 +46,33 @@ public class PlayerBehaviour : MonoBehaviour
             }
         }
 
-        else        {  //if camera 3D || camera vertical
+        else {  //if camera 3D || camera vertical
 
             if (moveVertical != 0) vel.x = 0;
-            else if (moveHorizontal > 0)            {
+            else if (moveHorizontal > 0) {
                 vel.x += playerAcceleration;
-                if (vel.x > playerMaxSpeed)                {
+                if (vel.x > playerMaxSpeed) {
                     vel.x = playerMaxSpeed;
                 }
             }
-            else if (moveHorizontal < 0)            {
+            else if (moveHorizontal < 0) {
                 vel.x -= playerAcceleration;
-                if (vel.x < -playerMaxSpeed)                {
+                if (vel.x < -playerMaxSpeed){
                     vel.x = -playerMaxSpeed;
                 }
             }
 
             //no pressed
-            if (moveHorizontal == 0)            {
-                if (vel.x < 0)                {
+            if (moveHorizontal == 0) {
+                if (vel.x < 0) {
                     vel.x += playerAcceleration / 4;
-                    if (vel.x >= 0)                    {
+                    if (vel.x >= 0) {
                         vel.x = 0.0f;
                     }
                 }
                 else                {
                     vel.x -= playerAcceleration / 4;
-                    if (vel.x <= 0)                    {
+                    if (vel.x <= 0) {
                         vel.x = 0.0f;
                     }
                 }
