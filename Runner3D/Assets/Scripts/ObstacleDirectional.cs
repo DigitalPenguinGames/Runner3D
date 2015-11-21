@@ -43,8 +43,9 @@ public class ObstacleDirectional : MonoBehaviour {
         }
         foreach (GameObject goProfile in profile) {
             Color colorAux = goProfile.GetComponent<MeshRenderer>().material.color;
-            float finalAlpha = Mathf.SmoothDamp(goProfile.GetComponent<Renderer>().material.color.a, targetProfile, ref alfaVelocityProfile, smoothTime);
+            float finalAlpha = Mathf.SmoothDamp(goProfile.GetComponent<MeshRenderer>().material.color.a, targetProfile, ref alfaVelocityProfile, smoothTime);
             colorAux.a = finalAlpha;
+            colorAux.r = colorAux.r - 0.0001f;
             goProfile.GetComponent<MeshRenderer>().material.color = colorAux;
             if (finalAlpha > 0.8) {
                 goProfile.GetComponent<BoxCollider>().enabled = true;
