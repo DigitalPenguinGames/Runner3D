@@ -1,11 +1,11 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class CameraMovement : MonoBehaviour {
+public enum Looking {
+    l3D, lTop, lProfile
+};
 
-	public enum Looking {
-		l3D, lTop, lProfile
-	};
+public class CameraMovement : MonoBehaviour {
 
 	public Looking cLooking = Looking.l3D;
 
@@ -49,19 +49,19 @@ public class CameraMovement : MonoBehaviour {
 		Vector3 targetPosition = Vector3.zero;
 		Vector3 targetRotation = Vector3.zero;
 		switch (cLooking) {
-		case Looking.l3D:
-			targetPosition = t3D;
-			targetRotation = r3D;
-			break;
-		case Looking.lProfile:
-			targetPosition = tProfile;
-			targetRotation = rProfile;
-			if (transform.localEulerAngles.y > targetRotation.y + 360) targetRotation.y += 360;
-			break;
-		case Looking.lTop:
-			targetPosition = tTop;
-			targetRotation = rTop;
-			break;
+		    case Looking.l3D:
+			    targetPosition = t3D;
+			    targetRotation = r3D;
+			    break;
+		    case Looking.lProfile:
+			    targetPosition = tProfile;
+			    targetRotation = rProfile;
+			    if (transform.localEulerAngles.y > targetRotation.y + 360) targetRotation.y += 360;
+			    break;
+		    case Looking.lTop:
+			    targetPosition = tTop;
+			    targetRotation = rTop;
+			    break;
 		}
 		if (moving) {
 			transform.localPosition = Vector3.SmoothDamp (transform.localPosition, targetPosition, ref velocity, smoothTime);
