@@ -33,16 +33,19 @@ public class CameraMovement : MonoBehaviour {
 			cLooking = Looking.l3D;
 			moving = true;
 			rotating = true;
+            this.GetComponent<Camera>().orthographic = false;
 		}
 		else if (Input.GetKeyDown(KeyCode.Alpha2)) {
 			cLooking = Looking.lProfile;
 			moving = true;
 			rotating = true;
+            this.GetComponent<Camera>().orthographic = true;
 		}
 		else if (Input.GetKeyDown(KeyCode.Alpha3)) {
 			cLooking = Looking.lTop;
 			moving = true;
 			rotating = true;
+            this.GetComponent<Camera>().orthographic = false;
 		}
 		if (!moving && !rotating) return;
 		// MOVING
