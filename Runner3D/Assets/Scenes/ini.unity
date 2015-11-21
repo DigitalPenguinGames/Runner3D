@@ -424,7 +424,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   prefabs:
   - {fileID: 166294, guid: dc01846ac83cb394796b563c5521db62, type: 2}
-  speed: 10
+  - {fileID: 174330, guid: acbbdfaac26ab4740896b2fa992d6fbc, type: 2}
+  speed: 5
+  startToSpawn: 20
 --- !u!1001 &1807535908
 Prefab:
   m_ObjectHideFlags: 0
@@ -526,7 +528,7 @@ Camera:
     width: 1
     height: 1
   near clip plane: .300000012
-  far clip plane: 12
+  far clip plane: 14
   field of view: 60
   orthographic: 0
   orthographic size: 5
@@ -568,8 +570,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cLooking: 0
   smoothTime: .200000003
-  t3D: {x: 0, y: .5, z: 0}
-  r3D: {x: 0, y: 0, z: 0}
+  t3D: {x: 0, y: 1.5, z: -1}
+  r3D: {x: 10, y: 0, z: 0}
   tTop: {x: 0, y: 5, z: 3}
   rTop: {x: 90, y: 0, z: 0}
   tProfile: {x: 5, y: 0, z: 5}

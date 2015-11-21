@@ -6,6 +6,7 @@ public class Spawner : MonoBehaviour
 
     public GameObject[] prefabs;
     public float speed = 1f;
+    public float startToSpawn = 20;
 
     // Use this for initialization
     void Start()
@@ -16,27 +17,15 @@ public class Spawner : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        float zPosition = 0;
-        /*Transform selected = transform;
-		foreach(Transform trans in gameObject.GetComponentsInChildren<Transform>()) {
-			if (trans.position.z > zPosition) {
-				zPosition = trans.position.z;
-				selected = trans;
-			}
-		}*/
         // Get the size of selected
-        float lastPosition = zPosition;
-        foreach (Renderer render in gameObject.GetComponentsInChildren<Renderer>())
-        {
+        float lastPosition = 0;
+        foreach (Renderer render in gameObject.GetComponentsInChildren<Renderer>()){
             float elementPosition = render.gameObject.transform.position.z + render.bounds.size.z;
-            if (elementPosition > lastPosition)
-            {
+            if (elementPosition > lastPosition){
                 lastPosition = elementPosition;
             }
         }
-        if (lastPosition < 12)
-        {
-            Debug.Log("Last position " + lastPosition + " zPosition " + zPosition);
+        if (lastPosition < startToSpawn){
             GameObject instance = Instantiate(prefabs[Random.Range(0, prefabs.Length)], new Vector3(0, 0, lastPosition), Quaternion.identity) as GameObject;
             instance.transform.SetParent(transform);
         }
