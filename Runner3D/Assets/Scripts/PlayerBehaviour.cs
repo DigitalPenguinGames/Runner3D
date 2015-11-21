@@ -4,7 +4,6 @@ using System.Collections;
 public class PlayerBehaviour : MonoBehaviour {
 
     private Camera cam;
-    private Rigidbody rb;
     private Vector3 vel = new Vector3(0.0f, 0.0f, 0.0f);
 
     public float jumpSpeed = 0.02f;
@@ -17,7 +16,6 @@ public class PlayerBehaviour : MonoBehaviour {
     
 
     void Start()    {
-        rb = GetComponent<Rigidbody>();
         cam = GameObject.FindObjectOfType<Camera>();
     }
 
