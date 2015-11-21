@@ -40,6 +40,7 @@ public class CameraMovement : MonoBehaviour {
 			moving = true;
 			rotating = true;
             this.GetComponent<Camera>().orthographic = true;
+            this.GetComponent<Camera>().orthographicSize = 2.5f;
 		}
 		else if (Input.GetKeyDown(KeyCode.Alpha3)) {
 			cLooking = Looking.lTop;
