@@ -375,6 +375,7 @@ MonoBehaviour:
   - {fileID: 166294, guid: dc01846ac83cb394796b563c5521db62, type: 2}
   - {fileID: 174330, guid: acbbdfaac26ab4740896b2fa992d6fbc, type: 2}
   - {fileID: 114236, guid: d44954c37cf7e2242bb7c03312f82abe, type: 2}
+  - {fileID: 177194, guid: 63d379750344a514488327d7a15daae2, type: 2}
   speed: 5
   startToSpawn: 20
 --- !u!1001 &1807535908
@@ -524,7 +525,7 @@ MonoBehaviour:
   r3D: {x: 10, y: 0, z: 0}
   tTop: {x: 0, y: 8, z: 3}
   rTop: {x: 90, y: 0, z: 0}
-  tProfile: {x: 4, y: 0, z: 2.5}
+  tProfile: {x: 4, y: 0, z: 6}
   rProfile: {x: 0, y: 270, z: 0}
 --- !u!114 &1895836800
 MonoBehaviour:

@@ -48,8 +48,22 @@ public class PlayerBehaviour : MonoBehaviour {
 
         else {  //if camera 3D || camera vertical
 
-            if (moveVertical != 0) vel.x = 0;
-            else if (moveHorizontal > 0) {
+            //if (moveVertical != 0) vel.x = 0;
+            if (this.transform.position.y > 0.2)
+            {
+                vel.y -= jumpSpeed / 8;
+            }
+            else if (moveVertical != 0)
+            {
+                vel.y += jumpSpeed;
+            }
+            if (vel.y >= 1)
+            {
+                vel.y = 1;
+            }
+
+
+            if (moveHorizontal > 0) {
                 vel.x += playerAcceleration;
                 if (vel.x > playerMaxSpeed) {
                     vel.x = playerMaxSpeed;
