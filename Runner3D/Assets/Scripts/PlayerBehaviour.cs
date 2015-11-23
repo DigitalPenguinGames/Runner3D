@@ -13,10 +13,13 @@ public class PlayerBehaviour : MonoBehaviour {
     public float playerVelocity = 0.0f;
     public float playerMaxSpeed = 0.06f;
     public float playerAcceleration = 0.051f;
+
+    private Vector3 initPosition;
     
 
     void Start()    {
         cam = GameObject.FindObjectOfType<Camera>();
+        initPosition = transform.localPosition;
     }
 
 
@@ -35,7 +38,8 @@ public class PlayerBehaviour : MonoBehaviour {
         // if Costat
         if (cam.GetComponent<CameraMovement>().cLooking == Looking.lProfile) {
 
-            if (this.transform.position.y > 0.2){
+            if (this.transform.position.y > initPosition.y)
+            {
                 vel.y -= jumpSpeed/8;
             }
             else if (moveVertical != 0){
@@ -49,7 +53,7 @@ public class PlayerBehaviour : MonoBehaviour {
         else {  //if camera 3D || camera vertical
 
             //if (moveVertical != 0) vel.x = 0;
-            if (this.transform.position.y > 0.2)
+            if (this.transform.position.y > initPosition.y)
             {
                 vel.y -= jumpSpeed / 8;
             }
@@ -96,7 +100,7 @@ public class PlayerBehaviour : MonoBehaviour {
         Vector3 finalPosition = new Vector3(this.transform.position.x + vel.x, this.transform.position.y + vel.y, this.transform.position.z + vel.z);
         if (finalPosition.x > 1) finalPosition.x = 1;
         if (finalPosition.x < -1) finalPosition.x = -1;
-        if (finalPosition.y < 0.1f) finalPosition.y = 0.1f;
+        if (finalPosition.y < initPosition.y) finalPosition.y = initPosition.y;
         this.transform.position = finalPosition;
     }
 
