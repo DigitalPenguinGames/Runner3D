@@ -6,7 +6,8 @@ public class PlayerBehaviour : MonoBehaviour {
     private Camera cam;
     private Vector3 vel = new Vector3(0.0f, 0.0f, 0.0f);
 
-    public float jumpSpeed = 0.02f;
+    public float jumpSpeed = 0.2f;
+    public float gravity = 0.1f;
     public float movementSpeed = 0.01f;
     public float rotationSpeed = 500.0f;
 
@@ -40,7 +41,7 @@ public class PlayerBehaviour : MonoBehaviour {
 
             if (this.transform.position.y > initPosition.y)
             {
-                vel.y -= jumpSpeed/8;
+                vel.y -= gravity;
             }
             else if (moveVertical != 0){
                 vel.y += jumpSpeed;
@@ -55,7 +56,7 @@ public class PlayerBehaviour : MonoBehaviour {
             //if (moveVertical != 0) vel.x = 0;
             if (this.transform.position.y > initPosition.y)
             {
-                vel.y -= jumpSpeed / 8;
+                vel.y -= gravity;
             }
             else if (moveVertical != 0)
             {
