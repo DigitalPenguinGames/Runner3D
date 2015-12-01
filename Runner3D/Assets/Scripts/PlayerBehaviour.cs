@@ -1,7 +1,8 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class PlayerBehaviour : MonoBehaviour {
+public class PlayerBehaviour : MonoBehaviour
+{
 
     private Camera cam;
     private Vector3 vel = new Vector3(0.0f, 0.0f, 0.0f);
@@ -10,6 +11,8 @@ public class PlayerBehaviour : MonoBehaviour {
     public float gravity = 0.1f;
     public float movementSpeed = 0.01f;
     public float rotationSpeed = 500.0f;
+    public ParticleSystem explosion;
+
 
     public float playerVelocity = 0.0f;
     public float playerMaxSpeed = 0.06f;
@@ -17,39 +20,31 @@ public class PlayerBehaviour : MonoBehaviour {
 
     private Vector3 initPosition;
 
-    void Explode() {
-        var exp = FindObjectOfType<ParticleSystem>();
-        exp.Play();
-        Destroy(gameObject, exp.duration);
+    void Explode()
+    {
+        explosion.Play();
+        //Destroy(gameObject, explosion.duration);
     }
 
-    void Start()    {
+    void Start()
+    {
         cam = GameObject.FindObjectOfType<Camera>();
         initPosition = transform.localPosition;
     }
 
-    void OnCollisionEnter(Collision col){
+    void OnCollisionEnter(Collision col)
+    {
 
-        if (col.gameObject.name == "Coin") {
-            //Do CoinStuff
-        }
-        else {
-            var ps = FindObjectOfType<ParticleSystem>();
-            ps.transform.position = this.transform.position;
-            if(col.gameObject.name == "Wall"){ //és un obstacle que et mata
-                Explode();
-            }
-        }
-
-        
     }
 
     // Update is called once per frame
-    void Update()    {
+    void Update()
+    {
 
     }
 
-    void FixedUpdate()    {
+    void FixedUpdate()
+    {
 
         float moveHorizontal = Input.GetAxis("Horizontal");
         float moveVertical = Input.GetAxis("Vertical");
@@ -57,21 +52,25 @@ public class PlayerBehaviour : MonoBehaviour {
         transform.Rotate(rotationSpeed * Time.deltaTime, 0.0f, 0.0f);
 
         // if Costat
-        if (cam.GetComponent<CameraMovement>().cLooking == Looking.lProfile) {
+        if (cam.GetComponent<CameraMovement>().cLooking == Looking.lProfile)
+        {
 
             if (this.transform.position.y > initPosition.y)
             {
                 vel.y -= gravity;
             }
-            else if (moveVertical != 0){
+            else if (moveVertical != 0)
+            {
                 vel.y += jumpSpeed;
             }
-            if (vel.y >= 1) {
+            if (vel.y >= 1)
+            {
                 vel.y = 1;
             }
         }
 
-        else {  //if camera 3D || camera vertical
+        else
+        {  //if camera 3D || camera vertical
 
             //if (moveVertical != 0) vel.x = 0;
             if (this.transform.position.y > initPosition.y)
@@ -88,30 +87,39 @@ public class PlayerBehaviour : MonoBehaviour {
             }
 
 
-            if (moveHorizontal > 0) {
+            if (moveHorizontal > 0)
+            {
                 vel.x += playerAcceleration;
-                if (vel.x > playerMaxSpeed) {
+                if (vel.x > playerMaxSpeed)
+                {
                     vel.x = playerMaxSpeed;
                 }
             }
-            else if (moveHorizontal < 0) {
+            else if (moveHorizontal < 0)
+            {
                 vel.x -= playerAcceleration;
-                if (vel.x < -playerMaxSpeed){
+                if (vel.x < -playerMaxSpeed)
+                {
                     vel.x = -playerMaxSpeed;
                 }
             }
 
             //no pressed
-            if (moveHorizontal == 0) {
-                if (vel.x < 0) {
+            if (moveHorizontal == 0)
+            {
+                if (vel.x < 0)
+                {
                     vel.x += playerAcceleration / 4;
-                    if (vel.x >= 0) {
+                    if (vel.x >= 0)
+                    {
                         vel.x = 0.0f;
                     }
                 }
-                else                {
+                else
+                {
                     vel.x -= playerAcceleration / 4;
-                    if (vel.x <= 0) {
+                    if (vel.x <= 0)
+                    {
                         vel.x = 0.0f;
                     }
                 }
@@ -125,10 +133,20 @@ public class PlayerBehaviour : MonoBehaviour {
         this.transform.position = finalPosition;
     }
 
-	void OnTriggerEnter(Collider other) {
-		if (other.gameObject.tag == "Obstacle") {
-			other.enabled = false;
-			cam.GetComponent<CameraMovement>().shake();
-		}
-	}
+    void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.tag == "Coin")
+        {
+            //Do CoinStuff
+        }
+        if (other.gameObject.tag == "Obstacle")
+        {
+            //var ps = FindObjectOfType<ParticleSystem>();
+            explosion.transform.position = this.transform.position;
+            Explode();
+
+            other.enabled = false;
+            cam.GetComponent<CameraMovement>().shake();
+        }
+    }
 }
