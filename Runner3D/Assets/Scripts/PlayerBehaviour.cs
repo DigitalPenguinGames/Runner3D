@@ -24,11 +24,25 @@ public class PlayerBehaviour : MonoBehaviour {
     }
 
     void Start()    {
-        Explode();
         cam = GameObject.FindObjectOfType<Camera>();
         initPosition = transform.localPosition;
     }
 
+    void OnCollisionEnter(Collision col){
+
+        if (col.gameObject.name == "Coin") {
+            //Do CoinStuff
+        }
+        else {
+            var ps = FindObjectOfType<ParticleSystem>();
+            ps.transform.position = this.transform.position;
+            if(col.gameObject.name == "Wall"){ //és un obstacle que et mata
+                Explode();
+            }
+        }
+
+        
+    }
 
     // Update is called once per frame
     void Update()    {
