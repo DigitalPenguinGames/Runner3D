@@ -5,6 +5,7 @@ public class ObstacleDirectional : MonoBehaviour {
 
     public float smoothTime = 0.2f;
     public GameObject[] profile;
+	public GameObject[] vista3D;
     public GameObject camera;
 
     private float alfaVelocityProfile = 0;
@@ -45,7 +46,6 @@ public class ObstacleDirectional : MonoBehaviour {
             Color colorAux = goProfile.GetComponent<MeshRenderer>().material.color;
             float finalAlpha = Mathf.SmoothDamp(goProfile.GetComponent<MeshRenderer>().material.color.a, targetProfile, ref alfaVelocityProfile, smoothTime);
             colorAux.a = finalAlpha;
-            colorAux.r = colorAux.r - 0.0001f;
             goProfile.GetComponent<MeshRenderer>().material.color = colorAux;
             if (finalAlpha > 0.8) {
                 goProfile.GetComponent<BoxCollider>().enabled = true;
@@ -56,5 +56,19 @@ public class ObstacleDirectional : MonoBehaviour {
                 goProfile.GetComponent<MeshRenderer>().enabled = false;
             }
         }
+		foreach (GameObject go3D in vista3D) {
+			Color colorAux = go3D.GetComponent<MeshRenderer>().material.color;
+			float finalAlpha = Mathf.SmoothDamp(go3D.GetComponent<MeshRenderer>().material.color.a, target3D, ref alfaVelocity3D, smoothTime);
+			colorAux.a = finalAlpha;
+			go3D.GetComponent<MeshRenderer>().material.color = colorAux;
+			if (finalAlpha > 0.8) {
+				go3D.GetComponent<BoxCollider>().enabled = true;
+				go3D.GetComponent<MeshRenderer>().enabled = true;
+			}
+			else if (finalAlpha < 0.2) {
+				go3D.GetComponent<BoxCollider>().enabled = false;
+				go3D.GetComponent<MeshRenderer>().enabled = false;
+			}
+		}
     }
 }
