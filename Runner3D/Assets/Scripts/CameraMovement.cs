@@ -20,6 +20,7 @@ public class CameraMovement : MonoBehaviour {
 	public Vector3 rTop;
 	public Vector3 tProfile;
 	public Vector3 rProfile;
+	private Vector3 targetPosition;
     public GameObject canvasPort;
     public GameObject canvasLand;
 
@@ -56,7 +57,7 @@ public class CameraMovement : MonoBehaviour {
 		}
 		if (!moving && !rotating) return;
 		// MOVING
-		Vector3 targetPosition = Vector3.zero;
+		targetPosition = Vector3.zero;
 		Vector3 targetRotation = Vector3.zero;
 		switch (cLooking) {
 		    case Looking.l3D:
@@ -105,9 +106,10 @@ public class CameraMovement : MonoBehaviour {
 		
 		float elapsed = 0.0f;
 		
-		Vector3 originalCamPos = Camera.main.transform.position;
+		Vector3 originalCamPos = targetPosition;
 		
 		while (elapsed < duration) {
+			originalCamPos = targetPosition;
 			
 			elapsed += Time.deltaTime;          
 			
