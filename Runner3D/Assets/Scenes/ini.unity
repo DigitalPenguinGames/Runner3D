@@ -1438,6 +1438,9 @@ MonoBehaviour:
   rProfile: {x: 0, y: 270, z: 90}
   canvasPort: {fileID: 251069251}
   canvasLand: {fileID: 873109061}
+  duration: .699999988
+  magnitude: .5
+  intensity: 20
 --- !u!114 &1895836800
 MonoBehaviour:
   m_ObjectHideFlags: 0
