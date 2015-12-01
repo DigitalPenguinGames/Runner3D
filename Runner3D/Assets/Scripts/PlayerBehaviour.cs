@@ -49,6 +49,15 @@ public class PlayerBehaviour : MonoBehaviour
         float moveHorizontal = Input.GetAxis("Horizontal");
         float moveVertical = Input.GetAxis("Vertical");
 
+		for (var i = 0; i < Input.touchCount; ++i) {
+			if (Input.GetTouch(i).phase == TouchPhase.Began) {
+				if (cam.GetComponent<CameraMovement>().cLooking == Looking.lProfile) moveVertical = 1;
+				else if (Input.GetTouch(i).position.x < Screen.width/3) moveHorizontal = -1; 
+				else if (Input.GetTouch(i).position.x < Screen.width*2/3) moveVertical = 1; 
+				else moveHorizontal = 1; 
+			}
+		}
+
         transform.Rotate(rotationSpeed * Time.deltaTime, 0.0f, 0.0f);
 
         // if Costat
