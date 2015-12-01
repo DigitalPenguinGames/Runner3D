@@ -20,6 +20,8 @@ public class CameraMovement : MonoBehaviour {
 	public Vector3 rTop;
 	public Vector3 tProfile;
 	public Vector3 rProfile;
+    public GameObject canvasPort;
+    public GameObject canvasLand;
 
 
 	// Use this for initialization
@@ -56,11 +58,15 @@ public class CameraMovement : MonoBehaviour {
 		    case Looking.l3D:
 			    targetPosition = t3D;
 			    targetRotation = r3D;
-			    break;
+                canvasLand.SetActive(false);
+                canvasPort.SetActive(true);
+ 			    break;
 		    case Looking.lProfile:
 			    targetPosition = tProfile;
 			    targetRotation = rProfile;
 			    if (transform.localEulerAngles.y > targetRotation.y + 360) targetRotation.y += 360;
+                canvasLand.SetActive(true);
+                canvasPort.SetActive(false);
 			    break;
 		    case Looking.lTop:
 			    targetPosition = tTop;
@@ -82,6 +88,7 @@ public class CameraMovement : MonoBehaviour {
 			}
 			Vector3 rotation = Vector3.SmoothDamp (transform.localEulerAngles, auxTargetRotation, ref angularVelocity, smoothTime);
 			transform.localEulerAngles = rotation;
+
 			/*if (Vector3.Distance (transform.localEulerAngles, auxTargetRotation) < 0.00001) {
 				rotating = false;
 				angularVelocity = Vector3.zero;
