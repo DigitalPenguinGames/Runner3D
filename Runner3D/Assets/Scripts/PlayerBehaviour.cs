@@ -16,9 +16,15 @@ public class PlayerBehaviour : MonoBehaviour {
     public float playerAcceleration = 0.051f;
 
     private Vector3 initPosition;
-    
+
+    void Explode() {
+        var exp = FindObjectOfType<ParticleSystem>();
+        exp.Play();
+        Destroy(gameObject, exp.duration);
+    }
 
     void Start()    {
+        Explode();
         cam = GameObject.FindObjectOfType<Camera>();
         initPosition = transform.localPosition;
     }
