@@ -83,7 +83,6 @@ public class CameraMovement : MonoBehaviour {
 				moving = false;
 				velocity = Vector3.zero;
 			}
-			Debug.Log("moving");
 		}
 		if (rotating) {
 			Vector3 auxTargetRotation = targetRotation;
@@ -99,7 +98,7 @@ public class CameraMovement : MonoBehaviour {
 				angularVelocity = Vector3.zero;
 			}*/
 		}
-		if (Input.GetKeyDown(KeyCode.Z)) StartCoroutine(Shake());
+		if (Input.GetKeyDown(KeyCode.Z)) shake();
 	}
 
 	IEnumerator Shake() {
@@ -131,6 +130,10 @@ public class CameraMovement : MonoBehaviour {
 		Camera.main.transform.position = originalCamPos;
 
 		Debug.Log("shaking");
+	}
+
+	public void shake() {
+		StartCoroutine(Shake());
 	}
 
 }

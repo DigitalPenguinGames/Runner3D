@@ -24,7 +24,7 @@ public class PlayerBehaviour : MonoBehaviour {
     }
 
     void Start()    {
-        Explode();
+        //Explode();
         cam = GameObject.FindObjectOfType<Camera>();
         initPosition = transform.localPosition;
     }
@@ -111,4 +111,10 @@ public class PlayerBehaviour : MonoBehaviour {
         this.transform.position = finalPosition;
     }
 
+	void OnTriggerEnter(Collider other) {
+		if (other.gameObject.tag == "Obstacle") {
+			other.enabled = false;
+			cam.GetComponent<CameraMovement>().shake();
+		}
+	}
 }
