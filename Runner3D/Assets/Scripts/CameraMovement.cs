@@ -23,6 +23,10 @@ public class CameraMovement : MonoBehaviour {
     public GameObject canvasPort;
     public GameObject canvasLand;
 
+	public float duration = 0.7f;
+	public float magnitude = 0.5f;
+	public float intensity = 20;
+
 
 	// Use this for initialization
 	void Start () {
@@ -79,6 +83,7 @@ public class CameraMovement : MonoBehaviour {
 				moving = false;
 				velocity = Vector3.zero;
 			}
+			Debug.Log("moving");
 		}
 		if (rotating) {
 			Vector3 auxTargetRotation = targetRotation;
@@ -94,5 +99,39 @@ public class CameraMovement : MonoBehaviour {
 				angularVelocity = Vector3.zero;
 			}*/
 		}
+		if (Input.GetKeyDown(KeyCode.Z)) StartCoroutine(Shake());
 	}
+
+	IEnumerator Shake() {
+		
+		float elapsed = 0.0f;
+		
+		Vector3 originalCamPos = Camera.main.transform.position;
+		
+		while (elapsed < duration) {
+			
+			elapsed += Time.deltaTime;          
+			
+			float percentComplete = elapsed / duration;         
+			float damper = 1.0f - Mathf.Clamp(4.0f * percentComplete - 3.0f, 0.0f, 1.0f);
+			
+			// map value to [-1, 1]
+			// float x = Random.value * 2.0f - 1.0f;
+			// float y = Random.value * 2.0f - 1.0f;
+			float x = Mathf.Clamp(Mathf.PerlinNoise(percentComplete*intensity,0),0.0f, 1.0f) * 2.0f - 1;
+			float y = Mathf.Clamp(Mathf.PerlinNoise(percentComplete*intensity,10),0.0f, 1.0f) * 2.0f - 1;
+			x *= magnitude * damper;
+			y *= magnitude * damper;
+			
+			Camera.main.transform.position = new Vector3(x+originalCamPos.x, y+originalCamPos.y, originalCamPos.z);
+			
+			yield return null;
+		}
+		
+		Camera.main.transform.position = originalCamPos;
+
+		Debug.Log("shaking");
+	}
+
 }
+
