@@ -1014,11 +1014,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!198 &1246927210 stripped
-ParticleSystem:
-  m_PrefabParentObject: {fileID: 19802416, guid: d5a13bc0974cbf246acb6b853c89a1bc,
-    type: 2}
-  m_PrefabInternal: {fileID: 213857692}
 --- !u!1 &1392967988
 GameObject:
   m_ObjectHideFlags: 0
