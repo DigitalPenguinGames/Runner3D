@@ -24,6 +24,10 @@ public class PlayerBehaviour : MonoBehaviour {
     }
 
     void Start()    {
+<<<<<<< HEAD
+=======
+        //Explode();
+>>>>>>> 79849944a97983792d97d152788d9083884f4985
         cam = GameObject.FindObjectOfType<Camera>();
         initPosition = transform.localPosition;
     }
@@ -125,4 +129,10 @@ public class PlayerBehaviour : MonoBehaviour {
         this.transform.position = finalPosition;
     }
 
+	void OnTriggerEnter(Collider other) {
+		if (other.gameObject.tag == "Obstacle") {
+			other.enabled = false;
+			cam.GetComponent<CameraMovement>().shake();
+		}
+	}
 }
