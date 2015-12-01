@@ -36,13 +36,13 @@ public class CameraMovement : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if (Input.GetKeyDown(KeyCode.Alpha1)) {
+		if (Input.GetKeyDown(KeyCode.Alpha1) || Mathf.Abs(Input.acceleration.x) < 0.3) {
 			cLooking = Looking.l3D;
 			moving = true;
 			rotating = true;
             this.GetComponent<Camera>().orthographic = false;
 		}
-		else if (Input.GetKeyDown(KeyCode.Alpha2)) {
+		else if (Input.GetKeyDown(KeyCode.Alpha2) || Mathf.Abs(Input.acceleration.x) > 0.7) {
 			cLooking = Looking.lProfile;
 			moving = true;
 			rotating = true;
