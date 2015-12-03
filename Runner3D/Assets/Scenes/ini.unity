@@ -1440,7 +1440,7 @@ MonoBehaviour:
   tTop: {x: 0, y: 8, z: 3}
   rTop: {x: 90, y: 0, z: 0}
   tProfile: {x: 4, y: 0, z: 6}
-  rProfile: {x: 0, y: 270, z: 90}
+  rProfile: {x: 0, y: 270, z: 270}
   canvasPort: {fileID: 251069251}
   canvasLand: {fileID: 873109061}
   duration: .699999988
@@ -1484,6 +1484,45 @@ MonoBehaviour:
   blurAndFlaresShader: {fileID: 4800000, guid: be6e39cf196f146d5be72fbefb18ed75, type: 3}
   brightPassFilterShader: {fileID: 4800000, guid: 0aeaa4cb29f5d4e9c8455f04c8575c8c,
     type: 3}
+--- !u!1 &1935846401
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1935846403}
+  - 114: {fileID: 1935846402}
+  m_Layer: 0
+  m_Name: scripts
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1935846402
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1935846401}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 12042a1269f0e274eb8ae023b293992d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &1935846403
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1935846401}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -2.4513793, y: -.905218124, z: 4.98880577}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 10
 --- !u!1 &2105507295
 GameObject:
   m_ObjectHideFlags: 0
