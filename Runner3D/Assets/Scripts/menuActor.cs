@@ -6,15 +6,16 @@ public class menuActor : MonoBehaviour {
     public bool isStart;
     public bool isQuit;
 
-	// Use this for initialization
+    // Use this for initialization
 	void Start () {
-	
+
 	}
 	
 	// Update is called once per frame
 	void Update () {
-	
-	}
+
+    }
+
 
     void OnMouseUp() {
         
