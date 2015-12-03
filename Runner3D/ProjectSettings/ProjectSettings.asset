@@ -165,13 +165,13 @@ PlayerSettings:
   - m_BuildTarget: 
     m_Icons:
     - serializedVersion: 2
-      m_Icon: {fileID: 0}
+      m_Icon: {fileID: 2800000, guid: de2c8867fd7d7a44d948a4d3a9e6c1f4, type: 3}
       m_Width: 128
       m_Height: 128
   - m_BuildTarget: Android
     m_Icons:
     - serializedVersion: 2
-      m_Icon: {fileID: 2800000, guid: 0131155778d28554e9cebbb50b75aba2, type: 3}
+      m_Icon: {fileID: 2800000, guid: de2c8867fd7d7a44d948a4d3a9e6c1f4, type: 3}
       m_Width: 192
       m_Height: 192
     - serializedVersion: 2

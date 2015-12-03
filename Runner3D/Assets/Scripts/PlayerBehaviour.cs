@@ -5,6 +5,7 @@ public class PlayerBehaviour : MonoBehaviour
 {
 
     private Camera cam;
+    private Vector3 initPosition;
     private Vector3 vel = new Vector3(0.0f, 0.0f, 0.0f);
 
     public float jumpSpeed = 0.2f;
@@ -18,8 +19,7 @@ public class PlayerBehaviour : MonoBehaviour
     public float playerMaxSpeed = 0.06f;
     public float playerAcceleration = 0.051f;
 
-    private Vector3 initPosition;
-
+   
     void Explode()
     {
         explosion.Play();
