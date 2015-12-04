@@ -5,6 +5,9 @@ public class Spawner : MonoBehaviour {
 
     public GameObject[] prefabs;
     public GameObject coin;
+    public GameObject enemy2D;
+    public GameObject enemy3D;
+
     public float speed = 1f;
     public float startToSpawn = 20;
 
@@ -23,8 +26,28 @@ public class Spawner : MonoBehaviour {
             }
         }
         if (lastPosition < startToSpawn){
-            GameObject instance = Instantiate(prefabs[Random.Range(0, prefabs.Length)], new Vector3(0, 0, lastPosition), Quaternion.identity) as GameObject;
-            instance.transform.SetParent(transform);
+
+            int enemyRandom = Random.Range(0, 10);
+            if (enemyRandom > 8) {
+                GameObject instance = Instantiate(prefabs[0], new Vector3(0, 0, lastPosition), Quaternion.identity) as GameObject;
+                instance.transform.SetParent(transform);
+
+                if (enemyRandom % 2 == 0) {
+                    GameObject instance1 = Instantiate(enemy2D, new Vector3(0, 0, lastPosition), Quaternion.identity) as GameObject;
+                    instance1.transform.SetParent(transform);
+                    instance1.transform.Translate(0, 0, -5);
+                }
+                else {
+                    GameObject instance2 = Instantiate(enemy3D, new Vector3(0, 0, lastPosition), Quaternion.identity) as GameObject;
+                    instance2.transform.SetParent(transform);
+                    instance2.transform.Translate(0, 0, -5);
+                }
+
+            }
+            else {
+                GameObject instance = Instantiate(prefabs[Random.Range(0, prefabs.Length)], new Vector3(0, 0, lastPosition), Quaternion.identity) as GameObject;
+                instance.transform.SetParent(transform);
+            }
 
             int random = Random.Range(0, 2);
             bool spawnCoin = (random == 0);
@@ -40,8 +63,8 @@ public class Spawner : MonoBehaviour {
                 aux.transform.SetParent(transform);
                 mycoin.transform.SetParent(aux.transform);
 
-
             }
+
 
         }
     }

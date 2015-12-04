@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class Enemy3DBehaviour : MonoBehaviour {
+public class enemy2DBehaviour : MonoBehaviour {
 
     private Camera cam;
     private Vector3 initPosition;
@@ -21,18 +21,16 @@ public class Enemy3DBehaviour : MonoBehaviour {
 
         
        // transform.Rotate(rotationSpeed * Time.deltaTime, 0.0f, 0.0f);
-        Vector3 finalPosition = new Vector3(0, 0, this.transform.position.z);;
-        // if Costat
-        if (cam.GetComponent<CameraMovement>().cLooking == Looking.lProfile) {
+        Vector3 finalPosition = new Vector3(this.transform.position.x, 0, this.transform.position.z);;
+        // if 3d
+        if (cam.GetComponent<CameraMovement>().cLooking == Looking.l3D) {
             if (this.transform.position.y > initPosition.y) {
                 vel.y -= gravity;
                 finalPosition = new Vector3(this.transform.position.x + vel.x, this.transform.position.y + vel.y, this.transform.position.z + vel.z);
             }
         }
 
-        else
-        {  //if camera 3D || camera vertical
-            finalPosition.x = player.transform.position.x;
+        else {  
             finalPosition.y = player.transform.position.y;
         }
 
