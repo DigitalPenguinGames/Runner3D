@@ -28,19 +28,19 @@ public class Spawner : MonoBehaviour {
         if (lastPosition < startToSpawn){
 
             int enemyRandom = Random.Range(0, 10);
-            if (enemyRandom > 8) {
+            if (enemyRandom > 7) {
                 GameObject instance = Instantiate(prefabs[0], new Vector3(0, 0, lastPosition), Quaternion.identity) as GameObject;
                 instance.transform.SetParent(transform);
 
                 if (enemyRandom % 2 == 0) {
                     GameObject instance1 = Instantiate(enemy2D, new Vector3(0, 0, lastPosition), Quaternion.identity) as GameObject;
                     instance1.transform.SetParent(transform);
-                    instance1.transform.Translate(0, 0, -5);
+                    instance1.transform.Translate(0, 0, +6);
                 }
                 else {
                     GameObject instance2 = Instantiate(enemy3D, new Vector3(0, 0, lastPosition), Quaternion.identity) as GameObject;
                     instance2.transform.SetParent(transform);
-                    instance2.transform.Translate(0, 0, -5);
+                    instance2.transform.Translate(0, 0, +6);
                 }
 
             }
@@ -70,9 +70,11 @@ public class Spawner : MonoBehaviour {
     }
 
     void FixedUpdate() {
-        foreach (Transform trans in transform) {
-            trans.Translate(0, 0, -speed * Time.fixedDeltaTime);
-            if (trans.position.z + 12 < 0) Destroy(trans.gameObject);
+        if (! Camera.main.GetComponent<CameraMovement>().movingOrRotating()) {
+            foreach (Transform trans in transform) {
+                trans.Translate(0, 0, -speed * Time.fixedDeltaTime);
+                if (trans.position.z + 12 < 0) Destroy(trans.gameObject);
+            }
         }
     }
 }

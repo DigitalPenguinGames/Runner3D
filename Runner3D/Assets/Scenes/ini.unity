@@ -1230,7 +1230,7 @@ MonoBehaviour:
   - {fileID: 177194, guid: 63d379750344a514488327d7a15daae2, type: 2}
   - {fileID: 118340, guid: c4565b1e1d05cae4390c989df234048f, type: 2}
   coin: {fileID: 162854, guid: d45eaf0c22fd87d42aeef2812c4c8ff5, type: 2}
-  enemy2D: {fileID: 0}
+  enemy2D: {fileID: 189120, guid: db85bc903dcb58d4f9e0b6bbb483b861, type: 2}
   enemy3D: {fileID: 137496, guid: d211c22097b0232489ab68c18fe29c23, type: 2}
   speed: 5
   startToSpawn: 20
@@ -1376,7 +1376,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cLooking: 0
-  smoothTime: .200000003
+  smoothTime: .400000006
   t3D: {x: 0, y: 2.20000005, z: -2.0999999}
   r3D: {x: 10, y: 0, z: 0}
   tTop: {x: 0, y: 8, z: 3}

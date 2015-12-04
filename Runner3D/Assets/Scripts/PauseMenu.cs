@@ -39,7 +39,7 @@ public class PauseMenu : MonoBehaviour
             Screen.height * 0.9f / 2 - (buttonHeight / 2) + offset,
             buttonWidth,
             buttonHeight
-            ), "PLAY" + "!"))
+            ), "RESUME!"))
         {
             GetComponentInParent<PauseScript>().quitPause();
         }

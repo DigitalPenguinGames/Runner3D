@@ -28,7 +28,10 @@ public class CameraMovement : MonoBehaviour {
 	public float magnitude = 0.5f;
 	public float intensity = 20;
 
-
+    private float lastMovement = 5;
+    public bool movingOrRotating() {
+        return lastMovement < smoothTime; 
+    }
 	// Use this for initialization
 	void Start () {
 	
@@ -36,14 +39,35 @@ public class CameraMovement : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if (Input.GetKeyDown(KeyCode.Alpha1) || Mathf.Abs(Input.acceleration.x) < 0.3) {
-			cLooking = Looking.l3D;
+        lastMovement += Time.deltaTime;
+
+        if(Input.GetKeyDown(KeyCode.Space)){
+            if(cLooking != Looking.l3D){
+                cLooking = Looking.l3D;
+                moving = true;
+			    rotating = true;
+                lastMovement = 0;
+                this.GetComponent<Camera>().orthographic = false;
+            }
+            else {
+                cLooking = Looking.lProfile;
+                moving = true;
+			    rotating = true;
+                lastMovement = 0;
+                this.GetComponent<Camera>().orthographic = true;
+                this.GetComponent<Camera>().orthographicSize = 5.5f;
+            }
+        }
+		if (Input.GetKeyDown(KeyCode.Alpha1) /*|| Mathf.Abs(Input.acceleration.x) < 0.3*/) {
+			if(cLooking != Looking.l3D) lastMovement = 0;
+            cLooking = Looking.l3D;
 			moving = true;
 			rotating = true;
             this.GetComponent<Camera>().orthographic = false;
 		}
-		else if (Input.GetKeyDown(KeyCode.Alpha2) || Mathf.Abs(Input.acceleration.x) > 0.7) {
-			cLooking = Looking.lProfile;
+		else if (Input.GetKeyDown(KeyCode.Alpha2) /*|| Mathf.Abs(Input.acceleration.x) > 0.7*/) {
+			if(cLooking != Looking.lProfile) lastMovement = 0;
+            cLooking = Looking.lProfile;
 			moving = true;
 			rotating = true;
             this.GetComponent<Camera>().orthographic = true;
@@ -53,6 +77,7 @@ public class CameraMovement : MonoBehaviour {
 			cLooking = Looking.lTop;
 			moving = true;
 			rotating = true;
+            lastMovement = 0;
             this.GetComponent<Camera>().orthographic = false;
 		}
 		if (!moving && !rotating) return;
