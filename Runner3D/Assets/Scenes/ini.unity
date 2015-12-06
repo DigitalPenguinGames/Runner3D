@@ -96,6 +96,7 @@ GameObject:
   - 223: {fileID: 107964854}
   - 114: {fileID: 107964853}
   - 114: {fileID: 107964852}
+  - 114: {fileID: 107964855}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -177,6 +178,19 @@ Canvas:
   m_OverridePixelPerfect: 0
   m_SortingLayerID: 0
   m_SortingOrder: 0
+--- !u!114 &107964855
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 107964850}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0dd3db64c2689444a96e4c209a029683, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  coins: {fileID: 1006278505}
+  time: {fileID: 1049233689}
 --- !u!1001 &213857692
 Prefab:
   m_ObjectHideFlags: 0
@@ -264,8 +278,8 @@ RectTransform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_Children:
   - {fileID: 107964851}
-  m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_Father: {fileID: 924295270}
+  m_RootOrder: 0
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
@@ -494,8 +508,8 @@ RectTransform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_Children:
   - {fileID: 1511831668}
-  m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_Father: {fileID: 924295270}
+  m_RootOrder: 1
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
@@ -555,6 +569,35 @@ Canvas:
   m_OverridePixelPerfect: 0
   m_SortingLayerID: 0
   m_SortingOrder: 0
+--- !u!1 &924295269
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 924295270}
+  m_Layer: 0
+  m_Name: UI
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &924295270
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 924295269}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 251069252}
+  - {fileID: 873109062}
+  m_Father: {fileID: 0}
+  m_RootOrder: 7
 --- !u!1 &1006278503
 GameObject:
   m_ObjectHideFlags: 0
@@ -1025,6 +1068,7 @@ GameObject:
   - 223: {fileID: 1511831671}
   - 114: {fileID: 1511831670}
   - 114: {fileID: 1511831669}
+  - 114: {fileID: 1511831672}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -1106,6 +1150,19 @@ Canvas:
   m_OverridePixelPerfect: 0
   m_SortingLayerID: 0
   m_SortingOrder: 0
+--- !u!114 &1511831672
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1511831667}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0dd3db64c2689444a96e4c209a029683, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  coins: {fileID: 1108490859}
+  time: {fileID: 1039445077}
 --- !u!4 &1530262080 stripped
 Transform:
   m_PrefabParentObject: {fileID: 458164, guid: dc01846ac83cb394796b563c5521db62, type: 2}
@@ -1435,6 +1492,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 1935846403}
   - 114: {fileID: 1935846402}
+  - 114: {fileID: 1935846404}
   m_Layer: 0
   m_Name: scripts
   m_TagString: Untagged
@@ -1464,7 +1522,22 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 8
+--- !u!114 &1935846404
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1935846401}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bf27f409b0d492445857a007ad53b5b1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  time: 0
+  coins: 0
+  run: 1
+  ui: {fileID: 924295269}
 --- !u!1 &2105507295
 GameObject:
   m_ObjectHideFlags: 0
