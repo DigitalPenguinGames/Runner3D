@@ -157,6 +157,7 @@ public class PlayerBehaviour : MonoBehaviour
     {
         if (other.gameObject.tag == "Coin") {
             //Do CoinStuff
+            //TODO only do it if same lookat
             ++coins;
             explosion.transform.position = this.transform.position;
             other.enabled = false;
