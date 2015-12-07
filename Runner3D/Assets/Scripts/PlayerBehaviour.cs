@@ -158,11 +158,16 @@ public class PlayerBehaviour : MonoBehaviour
         if (other.gameObject.tag == "Coin") {
             //Do CoinStuff
             //TODO only do it if same lookat
-            ++coins;
-            explosion.transform.position = this.transform.position;
-            other.enabled = false;
-            other.gameObject.GetComponent<MeshRenderer>().enabled = false;
-            Explode();
+            if ((cam.GetComponent<CameraMovement>().cLooking == Looking.l3D && other.gameObject.transform.rotation.x > 0)
+                || (cam.GetComponent<CameraMovement>().cLooking == Looking.lProfile && other.gameObject.transform.rotation.x <= 0))
+            {
+                Debug.Log(other.gameObject.transform.rotation.x);
+                ++coins;
+                explosion.transform.position = this.transform.position;
+                other.enabled = false;
+                other.gameObject.GetComponent<MeshRenderer>().enabled = false;
+                Explode();
+            }
         }
         else if (other.gameObject.tag == "Obstacle") {
 
