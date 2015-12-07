@@ -26,13 +26,19 @@ public class PlayerBehaviour : MonoBehaviour
 
     void Explode()
     {
+        Debug.Log("CoinPlosion!!!!!!!!!!!");
+        explosion.time = 0;
+        explosion.startDelay = 0.01f;
         explosion.Play();
-        //Destroy(gameObject, explosion.duration);
+
+        //Instantiate(explosion, this.transform.position, Quaternion.identity);
+
     }
 
     void Start()
     {
         coins = 0;
+        //explosion.Play();
         cam = GameObject.FindObjectOfType<Camera>();
         initPosition = transform.localPosition;
     }
@@ -154,14 +160,10 @@ public class PlayerBehaviour : MonoBehaviour
             ++coins;
             explosion.transform.position = this.transform.position;
             other.enabled = false;
-//            other.GetComponentInParent(MeshRenderer).enabled = false;
             other.gameObject.GetComponent<MeshRenderer>().enabled = false;
             Explode();
         }
         else if (other.gameObject.tag == "Obstacle") {
-            //var ps = FindObjectOfType<ParticleSystem>();
-            explosion.transform.position = this.transform.position;
-            Explode();
 
             other.enabled = false;
             cam.GetComponent<CameraMovement>().shake();
