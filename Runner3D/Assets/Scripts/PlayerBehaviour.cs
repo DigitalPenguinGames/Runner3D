@@ -4,6 +4,7 @@ using System.Collections;
 public class PlayerBehaviour : MonoBehaviour
 {
 
+    public int coins;
     private Camera cam;
     private Vector3 initPosition;
     private Vector3 vel = new Vector3(0.0f, 0.0f, 0.0f);
@@ -19,7 +20,10 @@ public class PlayerBehaviour : MonoBehaviour
     public float playerMaxSpeed = 0.06f;
     public float playerAcceleration = 0.051f;
 
-   
+    int getCoins() {
+        return coins;
+    }
+
     void Explode()
     {
         explosion.Play();
@@ -28,6 +32,7 @@ public class PlayerBehaviour : MonoBehaviour
 
     void Start()
     {
+        coins = 0;
         cam = GameObject.FindObjectOfType<Camera>();
         initPosition = transform.localPosition;
     }
@@ -144,12 +149,16 @@ public class PlayerBehaviour : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.tag == "Coin")
-        {
+        if (other.gameObject.tag == "Coin") {
             //Do CoinStuff
+            ++coins;
+            explosion.transform.position = this.transform.position;
+            other.enabled = false;
+//            other.GetComponentInParent(MeshRenderer).enabled = false;
+            other.gameObject.GetComponent<MeshRenderer>().enabled = false;
+            Explode();
         }
-        if (other.gameObject.tag == "Obstacle")
-        {
+        else if (other.gameObject.tag == "Obstacle") {
             //var ps = FindObjectOfType<ParticleSystem>();
             explosion.transform.position = this.transform.position;
             Explode();

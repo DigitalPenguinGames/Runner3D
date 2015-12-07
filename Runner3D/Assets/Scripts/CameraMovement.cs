@@ -58,14 +58,14 @@ public class CameraMovement : MonoBehaviour {
                 this.GetComponent<Camera>().orthographicSize = 5.5f;
             }
         }
-		if (Input.GetKeyDown(KeyCode.Alpha1) /*|| Mathf.Abs(Input.acceleration.x) < 0.3*/) {
+		if (Input.GetKeyDown(KeyCode.Alpha1) || Mathf.Abs(Input.acceleration.x) < 0.3) {
 			if(cLooking != Looking.l3D) lastMovement = 0;
             cLooking = Looking.l3D;
 			moving = true;
 			rotating = true;
             this.GetComponent<Camera>().orthographic = false;
 		}
-		else if (Input.GetKeyDown(KeyCode.Alpha2) /*|| Mathf.Abs(Input.acceleration.x) > 0.7*/) {
+		else if (Input.GetKeyDown(KeyCode.Alpha2) || Mathf.Abs(Input.acceleration.x) > 0.7) {
 			if(cLooking != Looking.lProfile) lastMovement = 0;
             cLooking = Looking.lProfile;
 			moving = true;
