@@ -169,8 +169,22 @@ public class PlayerBehaviour : MonoBehaviour
                 Explode();
             }
         }
-        else if (other.gameObject.tag == "Obstacle") {
-
+        else if (other.gameObject.tag == "cameraDependentObstacle3D")
+        {
+            if (cam.GetComponent<CameraMovement>().cLooking == Looking.l3D ){
+                other.enabled = false;
+                cam.GetComponent<CameraMovement>().shake();
+            }
+        }
+        else if (other.gameObject.tag == "cameraDependentObstacleProfile")
+        {
+            if (cam.GetComponent<CameraMovement>().cLooking == Looking.lProfile ){
+                other.enabled = false;
+                cam.GetComponent<CameraMovement>().shake();
+            }
+        }
+        else if (other.gameObject.tag == "Obstacle")
+        {
             other.enabled = false;
             cam.GetComponent<CameraMovement>().shake();
         }

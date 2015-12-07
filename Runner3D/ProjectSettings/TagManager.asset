@@ -8,6 +8,8 @@ TagManager:
   - Coin
   - Player
   - Explosion
+  - cameraDependentObstacle3D
+  - cameraDependentObstacleProfile
   layers:
   - Default
   - TransparentFX

@@ -403,7 +403,7 @@ GameObject:
   - 23: {fileID: 2340808}
   m_Layer: 0
   m_Name: RedCross
-  m_TagString: Untagged
+  m_TagString: cameraDependentObstacle3D
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -418,7 +418,7 @@ GameObject:
   - 4: {fileID: 432948}
   m_Layer: 0
   m_Name: RedCrossPrefab 1
-  m_TagString: Untagged
+  m_TagString: cameraDependentObstacle3D
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -710,7 +710,7 @@ Transform:
   m_GameObject: {fileID: 179814}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 1.49999988, z: 6.01000023}
-  m_LocalScale: {x: .976656735, y: 3, z: .00100000005}
+  m_LocalScale: {x: .976656735, y: 3, z: .00499999989}
   m_Children: []
   m_Father: {fileID: 432948}
   m_RootOrder: 2
@@ -1978,7 +1978,7 @@ BoxCollider:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 179814}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
@@ -1989,7 +1989,19 @@ Prefab:
   serializedVersion: 2
   m_Modification:
     m_TransformParent: {fileID: 0}
-    m_Modifications: []
+    m_Modifications:
+    - target: {fileID: 0}
+      propertyPath: m_TagString
+      value: cameraDependentObstacle3D
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_LocalScale.z
+      value: .00499999989
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 181964}

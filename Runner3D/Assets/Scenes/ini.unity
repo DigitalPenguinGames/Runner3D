@@ -1276,6 +1276,8 @@ MonoBehaviour:
   - {fileID: 114236, guid: d44954c37cf7e2242bb7c03312f82abe, type: 2}
   - {fileID: 177194, guid: 63d379750344a514488327d7a15daae2, type: 2}
   - {fileID: 118340, guid: c4565b1e1d05cae4390c989df234048f, type: 2}
+  - {fileID: 140904, guid: ba966dc615918b64dbd6cca2c06ad20a, type: 2}
+  - {fileID: 181964, guid: 953845fc61a36ea42ae83f56aa35e5fa, type: 2}
   coin: {fileID: 162854, guid: d45eaf0c22fd87d42aeef2812c4c8ff5, type: 2}
   enemy2D: {fileID: 189120, guid: db85bc903dcb58d4f9e0b6bbb483b861, type: 2}
   enemy3D: {fileID: 137496, guid: d211c22097b0232489ab68c18fe29c23, type: 2}
