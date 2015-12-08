@@ -8,6 +8,8 @@ public class PlayerBehaviour : MonoBehaviour
     private Camera cam;
     private Vector3 initPosition;
     private Vector3 vel = new Vector3(0.0f, 0.0f, 0.0f);
+    private GameObject AudioManager;
+    private AudioPlayer audioScript;
 
     public float jumpSpeed = 0.2f;
     public float gravity = 0.1f;
@@ -38,9 +40,13 @@ public class PlayerBehaviour : MonoBehaviour
     void Start()
     {
         coins = 0;
+        AudioManager = GameObject.Find("Audio");
+        audioScript = (AudioPlayer) AudioManager.GetComponent(typeof(AudioPlayer));
+        
         //explosion.Play();
         cam = GameObject.FindObjectOfType<Camera>();
         initPosition = transform.localPosition;
+
     }
 
     void OnCollisionEnter(Collision col)
@@ -99,6 +105,7 @@ public class PlayerBehaviour : MonoBehaviour
             }
             else if (moveVertical != 0)
             {
+                audioScript.playJumpSound();
                 vel.y += jumpSpeed;
             }
             if (vel.y >= 1)
@@ -156,6 +163,7 @@ public class PlayerBehaviour : MonoBehaviour
     void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.tag == "Coin") {
+            
             //Do CoinStuff
             //TODO only do it if same lookat
             if ((cam.GetComponent<CameraMovement>().cLooking == Looking.l3D && other.gameObject.transform.rotation.x > 0)
@@ -163,6 +171,7 @@ public class PlayerBehaviour : MonoBehaviour
             {
                 Debug.Log(other.gameObject.transform.rotation.x);
                 ++coins;
+                audioScript.playCoinSound();
                 explosion.transform.position = this.transform.position;
                 other.enabled = false;
                 other.gameObject.GetComponent<MeshRenderer>().enabled = false;
@@ -173,6 +182,7 @@ public class PlayerBehaviour : MonoBehaviour
         {
             if (cam.GetComponent<CameraMovement>().cLooking == Looking.l3D ){
                 other.enabled = false;
+                audioScript.playCrashSound();
                 cam.GetComponent<CameraMovement>().shake();
             }
         }
@@ -180,12 +190,15 @@ public class PlayerBehaviour : MonoBehaviour
         {
             if (cam.GetComponent<CameraMovement>().cLooking == Looking.lProfile ){
                 other.enabled = false;
+                audioScript.playCrashSound();
                 cam.GetComponent<CameraMovement>().shake();
+
             }
         }
         else if (other.gameObject.tag == "Obstacle")
         {
             other.enabled = false;
+            audioScript.playCrashSound();
             cam.GetComponent<CameraMovement>().shake();
         }
     }

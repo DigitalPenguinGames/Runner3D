@@ -29,9 +29,10 @@ public class Spawner : MonoBehaviour {
 
             int enemyRandom = Random.Range(0, 10);
             if (enemyRandom > 7) {
+                //Base de terra on hi haurà un enemic.
                 GameObject instance = Instantiate(prefabs[0], new Vector3(0, 0, lastPosition), Quaternion.identity) as GameObject;
                 instance.transform.SetParent(transform);
-
+                //Enemic en 2D o 3D segons convingui
                 if (enemyRandom % 2 == 0) {
                     GameObject instance1 = Instantiate(enemy2D, new Vector3(0, 0, lastPosition), Quaternion.identity) as GameObject;
                     instance1.transform.SetParent(transform);
@@ -44,14 +45,14 @@ public class Spawner : MonoBehaviour {
                 }
 
             }
-            else {
+            else { //obstacle random sempre que no hauguem posat un enemic
                 GameObject instance = Instantiate(prefabs[Random.Range(0, prefabs.Length)], new Vector3(0, 0, lastPosition), Quaternion.identity) as GameObject;
                 instance.transform.SetParent(transform);
             }
 
             int random = Random.Range(0, 2);
             bool spawnCoin = (random == 0);
-            if (spawnCoin) {
+            if (spawnCoin) { //coins 
                 random = Random.Range(0, 2);
                 Quaternion rotationQuat;
                 if (random % 2 == 0) rotationQuat = Quaternion.Euler(90, 0, 0);
