@@ -93,6 +93,9 @@ public class PlayerBehaviour : MonoBehaviour
             {
                 vel.y = 1;
             }
+
+            Vector3 fixedPosition = new Vector3( 0 , this.transform.position.y, this.transform.position.z);
+            this.transform.position = fixedPosition;
         }
 
         else
@@ -162,8 +165,10 @@ public class PlayerBehaviour : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.tag == "Coin") {
-            
+
+        if (other.gameObject.tag == "Coin")
+        {
+
             //Do CoinStuff
             //TODO only do it if same lookat
             if ((cam.GetComponent<CameraMovement>().cLooking == Looking.l3D && other.gameObject.transform.rotation.x > 0)
@@ -177,29 +182,39 @@ public class PlayerBehaviour : MonoBehaviour
                 other.gameObject.GetComponent<MeshRenderer>().enabled = false;
                 Explode();
             }
-        }
-        else if (other.gameObject.tag == "cameraDependentObstacle3D")
-        {
-            if (cam.GetComponent<CameraMovement>().cLooking == Looking.l3D ){
-                other.enabled = false;
-                audioScript.playCrashSound();
-                cam.GetComponent<CameraMovement>().shake();
-            }
-        }
-        else if (other.gameObject.tag == "cameraDependentObstacleProfile")
-        {
-            if (cam.GetComponent<CameraMovement>().cLooking == Looking.lProfile ){
-                other.enabled = false;
-                audioScript.playCrashSound();
-                cam.GetComponent<CameraMovement>().shake();
+        } else {
 
+            Spawner spawner = FindObjectOfType<Spawner>();
+ 
+            if (other.gameObject.tag == "cameraDependentObstacle3D") {
+
+                if (cam.GetComponent<CameraMovement>().cLooking == Looking.l3D) {
+                    spawner.touched = true;
+
+                    other.enabled = false;
+                    audioScript.playCrashSound();
+                    cam.GetComponent<CameraMovement>().shake();
+                }
             }
-        }
-        else if (other.gameObject.tag == "Obstacle")
-        {
-            other.enabled = false;
-            audioScript.playCrashSound();
-            cam.GetComponent<CameraMovement>().shake();
+            else if (other.gameObject.tag == "cameraDependentObstacleProfile") {
+
+                if (cam.GetComponent<CameraMovement>().cLooking == Looking.lProfile) {
+                    spawner.touched = true;
+
+                    other.enabled = false;
+                    audioScript.playCrashSound();
+                    cam.GetComponent<CameraMovement>().shake();
+
+                }
+            }
+            else if (other.gameObject.tag == "Obstacle")
+            {
+                spawner.touched = true;
+
+                other.enabled = false;
+                audioScript.playCrashSound();
+                cam.GetComponent<CameraMovement>().shake();
+            }
         }
     }
 }

@@ -10,6 +10,7 @@ TagManager:
   - Explosion
   - cameraDependentObstacle3D
   - cameraDependentObstacleProfile
+  - spawner
   layers:
   - Default
   - TransparentFX
