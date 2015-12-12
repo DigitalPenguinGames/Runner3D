@@ -1542,6 +1542,9 @@ GameObject:
   - 114: {fileID: 1719749349}
   - 114: {fileID: 1719749348}
   - 114: {fileID: 1719749350}
+  - 114: {fileID: 1719749353}
+  - 114: {fileID: 1719749352}
+  - 114: {fileID: 1719749351}
   m_Layer: 0
   m_Name: Spawner
   m_TagString: Untagged
@@ -1593,7 +1596,6 @@ MonoBehaviour:
   description: Un salto
   obstacles:
   - {fileID: 174330, guid: acbbdfaac26ab4740896b2fa992d6fbc, type: 2}
-  - {fileID: 166294, guid: dc01846ac83cb394796b563c5521db62, type: 2}
   dificulty: 1
 --- !u!114 &1719749349
 MonoBehaviour:
@@ -1628,8 +1630,58 @@ MonoBehaviour:
   - {fileID: 174330, guid: acbbdfaac26ab4740896b2fa992d6fbc, type: 2}
   - {fileID: 174330, guid: acbbdfaac26ab4740896b2fa992d6fbc, type: 2}
   - {fileID: 174330, guid: acbbdfaac26ab4740896b2fa992d6fbc, type: 2}
-  - {fileID: 166294, guid: dc01846ac83cb394796b563c5521db62, type: 2}
   dificulty: 3
+--- !u!114 &1719749351
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1719749345}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a63a42f3f1f5ad4291973263f4a5d5c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  indexTutorial: 4
+  description: dodge plus jump
+  obstacles:
+  - {fileID: 177194, guid: 63d379750344a514488327d7a15daae2, type: 2}
+  - {fileID: 174330, guid: acbbdfaac26ab4740896b2fa992d6fbc, type: 2}
+  - {fileID: 147156, guid: fe26fc6716268a64bae8e40f50c6014b, type: 2}
+  dificulty: 4
+--- !u!114 &1719749352
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1719749345}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a63a42f3f1f5ad4291973263f4a5d5c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  indexTutorial: 3
+  description: four columns
+  obstacles:
+  - {fileID: 147156, guid: fe26fc6716268a64bae8e40f50c6014b, type: 2}
+  - {fileID: 177194, guid: 63d379750344a514488327d7a15daae2, type: 2}
+  dificulty: 2
+--- !u!114 &1719749353
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1719749345}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a63a42f3f1f5ad4291973263f4a5d5c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  indexTutorial: 2
+  description: Learning to dodge (one comun)
+  obstacles:
+  - {fileID: 147156, guid: fe26fc6716268a64bae8e40f50c6014b, type: 2}
+  dificulty: 1
 --- !u!1 &1736431575
 GameObject:
   m_ObjectHideFlags: 0
