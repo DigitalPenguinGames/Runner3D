@@ -31,13 +31,15 @@ public class Spawner : MonoBehaviour {
             float elementPosition = render.gameObject.transform.position.z + render.bounds.size.z;
             if (elementPosition > lastPosition){
                 lastPosition = elementPosition;
+
             }
         }
+         lastPosition = lastPosition - 0.5f;
         if (lastPosition < startToSpawn){
 
             if (tutorial < prefabs.Length+2)
             {   //TUTORIAL UPDATE
-                Debug.Log("TuToRiAl ----" + tutorial);
+                //Debug.Log("TuToRiAl ----" + tutorial);
 
                 if(tutorial < prefabs.Length-1){
                     GameObject instance = Instantiate(prefabs[tutorial], new Vector3(0, 0, lastPosition), Quaternion.identity) as GameObject;
@@ -74,7 +76,7 @@ public class Spawner : MonoBehaviour {
             }
             else
             {   //REGULAR UPDATE
-                Debug.Log("Regular Game Update");
+               // Debug.Log("Regular Game Update");
                 int enemyRandom = Random.Range(0, 10);
                 if (enemyRandom > 7)
                 {

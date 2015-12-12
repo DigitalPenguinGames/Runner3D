@@ -38,7 +38,7 @@ public class AudioPlayer : MonoBehaviour {
 
     public void playJumpSound()
     {
-        float vol = Random.Range(minVol/2, maxVol/2);
+        float vol = Random.Range(minVol, maxVol);
         source.PlayOneShot(jump[Random.Range(0, jump.Length)], vol);
     }
 }

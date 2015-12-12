@@ -87,6 +87,7 @@ public class PlayerBehaviour : MonoBehaviour
             }
             else if (moveVertical != 0)
             {
+                audioScript.playJumpSound( );
                 vel.y += jumpSpeed;
             }
             if (vel.y >= 1)
