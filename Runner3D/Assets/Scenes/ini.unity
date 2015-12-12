@@ -1545,6 +1545,9 @@ GameObject:
   - 114: {fileID: 1719749353}
   - 114: {fileID: 1719749352}
   - 114: {fileID: 1719749351}
+  - 114: {fileID: 1719749355}
+  - 114: {fileID: 1719749354}
+  - 114: {fileID: 1719749356}
   m_Layer: 0
   m_Name: Spawner
   m_TagString: Untagged
@@ -1682,6 +1685,56 @@ MonoBehaviour:
   obstacles:
   - {fileID: 147156, guid: fe26fc6716268a64bae8e40f50c6014b, type: 2}
   dificulty: 1
+--- !u!114 &1719749354
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1719749345}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a63a42f3f1f5ad4291973263f4a5d5c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  indexTutorial: 6
+  description: camera cahnge plus jump
+  obstacles:
+  - {fileID: 114236, guid: d44954c37cf7e2242bb7c03312f82abe, type: 2}
+  - {fileID: 174330, guid: acbbdfaac26ab4740896b2fa992d6fbc, type: 2}
+  dificulty: 4
+--- !u!114 &1719749355
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1719749345}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a63a42f3f1f5ad4291973263f4a5d5c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  indexTutorial: 5
+  description: chaging camera
+  obstacles:
+  - {fileID: 114236, guid: d44954c37cf7e2242bb7c03312f82abe, type: 2}
+  dificulty: 3
+--- !u!114 &1719749356
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1719749345}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a63a42f3f1f5ad4291973263f4a5d5c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  indexTutorial: 7
+  description: 
+  obstacles:
+  - {fileID: 114236, guid: d44954c37cf7e2242bb7c03312f82abe, type: 2}
+  - {fileID: 177194, guid: 63d379750344a514488327d7a15daae2, type: 2}
+  dificulty: 6
 --- !u!1 &1736431575
 GameObject:
   m_ObjectHideFlags: 0
