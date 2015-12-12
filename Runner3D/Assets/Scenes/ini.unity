@@ -1539,6 +1539,15 @@ GameObject:
   m_Component:
   - 4: {fileID: 1719749346}
   - 114: {fileID: 1719749347}
+  - 114: {fileID: 1719749349}
+  - 114: {fileID: 1719749348}
+  - 114: {fileID: 1719749350}
+  - 114: {fileID: 1719749353}
+  - 114: {fileID: 1719749352}
+  - 114: {fileID: 1719749351}
+  - 114: {fileID: 1719749355}
+  - 114: {fileID: 1719749354}
+  - 114: {fileID: 1719749356}
   m_Layer: 0
   m_Name: Spawner
   m_TagString: Untagged
@@ -1570,20 +1579,162 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 71c8f90ec58757648a3aa0b6c06fb873, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  prefabs:
-  - {fileID: 166294, guid: dc01846ac83cb394796b563c5521db62, type: 2}
-  - {fileID: 174330, guid: acbbdfaac26ab4740896b2fa992d6fbc, type: 2}
-  - {fileID: 166294, guid: dc01846ac83cb394796b563c5521db62, type: 2}
-  - {fileID: 114236, guid: d44954c37cf7e2242bb7c03312f82abe, type: 2}
-  - {fileID: 166294, guid: dc01846ac83cb394796b563c5521db62, type: 2}
-  - {fileID: 177194, guid: 63d379750344a514488327d7a15daae2, type: 2}
-  - {fileID: 166294, guid: dc01846ac83cb394796b563c5521db62, type: 2}
-  coin: {fileID: 162854, guid: d45eaf0c22fd87d42aeef2812c4c8ff5, type: 2}
-  enemy2D: {fileID: 189120, guid: db85bc903dcb58d4f9e0b6bbb483b861, type: 2}
-  enemy3D: {fileID: 137496, guid: d211c22097b0232489ab68c18fe29c23, type: 2}
   touched: 0
   speed: 5
-  startToSpawn: 20
+  startToSpawn: 16
+  tutorial: 1
+  tutorialTime: 7
+--- !u!114 &1719749348
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1719749345}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a63a42f3f1f5ad4291973263f4a5d5c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  indexTutorial: 0
+  description: Un salto
+  obstacles:
+  - {fileID: 174330, guid: acbbdfaac26ab4740896b2fa992d6fbc, type: 2}
+  dificulty: 1
+--- !u!114 &1719749349
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1719749345}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a63a42f3f1f5ad4291973263f4a5d5c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  indexTutorial: -1
+  description: Solo suelo
+  obstacles:
+  - {fileID: 166294, guid: dc01846ac83cb394796b563c5521db62, type: 2}
+  dificulty: 0
+--- !u!114 &1719749350
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1719749345}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a63a42f3f1f5ad4291973263f4a5d5c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  indexTutorial: 1
+  description: TripleJump
+  obstacles:
+  - {fileID: 174330, guid: acbbdfaac26ab4740896b2fa992d6fbc, type: 2}
+  - {fileID: 174330, guid: acbbdfaac26ab4740896b2fa992d6fbc, type: 2}
+  - {fileID: 174330, guid: acbbdfaac26ab4740896b2fa992d6fbc, type: 2}
+  dificulty: 3
+--- !u!114 &1719749351
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1719749345}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a63a42f3f1f5ad4291973263f4a5d5c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  indexTutorial: 4
+  description: dodge plus jump
+  obstacles:
+  - {fileID: 177194, guid: 63d379750344a514488327d7a15daae2, type: 2}
+  - {fileID: 174330, guid: acbbdfaac26ab4740896b2fa992d6fbc, type: 2}
+  - {fileID: 147156, guid: fe26fc6716268a64bae8e40f50c6014b, type: 2}
+  dificulty: 4
+--- !u!114 &1719749352
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1719749345}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a63a42f3f1f5ad4291973263f4a5d5c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  indexTutorial: 3
+  description: four columns
+  obstacles:
+  - {fileID: 147156, guid: fe26fc6716268a64bae8e40f50c6014b, type: 2}
+  - {fileID: 177194, guid: 63d379750344a514488327d7a15daae2, type: 2}
+  dificulty: 2
+--- !u!114 &1719749353
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1719749345}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a63a42f3f1f5ad4291973263f4a5d5c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  indexTutorial: 2
+  description: Learning to dodge (one comun)
+  obstacles:
+  - {fileID: 147156, guid: fe26fc6716268a64bae8e40f50c6014b, type: 2}
+  dificulty: 1
+--- !u!114 &1719749354
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1719749345}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a63a42f3f1f5ad4291973263f4a5d5c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  indexTutorial: 6
+  description: camera cahnge plus jump
+  obstacles:
+  - {fileID: 114236, guid: d44954c37cf7e2242bb7c03312f82abe, type: 2}
+  - {fileID: 174330, guid: acbbdfaac26ab4740896b2fa992d6fbc, type: 2}
+  dificulty: 4
+--- !u!114 &1719749355
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1719749345}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a63a42f3f1f5ad4291973263f4a5d5c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  indexTutorial: 5
+  description: chaging camera
+  obstacles:
+  - {fileID: 114236, guid: d44954c37cf7e2242bb7c03312f82abe, type: 2}
+  dificulty: 3
+--- !u!114 &1719749356
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1719749345}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a63a42f3f1f5ad4291973263f4a5d5c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  indexTutorial: 7
+  description: 
+  obstacles:
+  - {fileID: 114236, guid: d44954c37cf7e2242bb7c03312f82abe, type: 2}
+  - {fileID: 177194, guid: 63d379750344a514488327d7a15daae2, type: 2}
+  dificulty: 6
 --- !u!1 &1736431575
 GameObject:
   m_ObjectHideFlags: 0

@@ -3,6 +3,74 @@ using System.Collections;
 
 public class Spawner : MonoBehaviour {
 
+	public bool touched = false;
+	public float speed = 5;
+	public float startToSpawn = 20;
+	
+	public bool tutorial = true;
+	public float tutorialTime = 3;
+
+	private ObstaclePattern[] obstacles;
+	private float currentDificulty = 0;
+
+	private int tutorialIndex = 0;
+	private float tutorialElapsed = 0;
+
+	void Start() {
+		obstacles = gameObject.GetComponents<ObstaclePattern>();
+	}
+
+	void Update() {
+		tutorialElapsed -= Time.deltaTime;
+		// Get the size of selected
+		float lastPosition = 0;
+		foreach (Renderer render in gameObject.GetComponentsInChildren<Renderer>()){
+			float elementPosition = render.gameObject.transform.position.z + render.bounds.size.z;
+			if (elementPosition > lastPosition){
+				lastPosition = elementPosition;
+			}
+		}
+		lastPosition = lastPosition - 0.5f;
+		if (lastPosition < startToSpawn) {
+			if (tutorial) {
+				if (tutorialElapsed < 0){
+					if (touched) --tutorialIndex;
+					touched = false;
+
+					obstacles[tutorialIndex].spawn(transform,lastPosition);
+					++tutorialIndex;
+					if (tutorialIndex >= obstacles.Length) tutorial = false;
+					tutorialElapsed = tutorialTime;
+				}
+				else {
+					obstacles[0].spawn(transform,lastPosition);
+				}
+			}
+			else {
+				obstacles[Random.Range(0, obstacles.Length)].spawn(transform,lastPosition);
+			}
+		}
+	}
+
+	void FixedUpdate() {
+		if (! Camera.main.GetComponent<CameraMovement>().movingOrRotating()) {
+			foreach (Transform trans in transform) {
+				trans.Translate(0, 0, -speed * Time.fixedDeltaTime);
+				if (trans.position.z + 12 < 0) Destroy(trans.gameObject);
+			}
+		}
+	}
+}
+
+
+
+
+/*
+using UnityEngine;
+using System.Collections;
+
+public class Spawner : MonoBehaviour {
+
     public GameObject[] prefabs;
     public GameObject coin;
     public GameObject enemy2D;
@@ -135,3 +203,4 @@ public class Spawner : MonoBehaviour {
         }
     }
 }
+*/
