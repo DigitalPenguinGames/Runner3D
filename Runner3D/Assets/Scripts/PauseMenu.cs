@@ -28,7 +28,7 @@ public class PauseMenu : MonoBehaviour
             Screen.height * 0.9f / 2 - (buttonHeight / 2),
             buttonWidth,
             buttonHeight
-            ), "MENU"))
+            ), "GOT IT"))
         {
             GetComponentInParent<PauseScript>().quitPause();
             Application.LoadLevel("Menu");
@@ -39,7 +39,7 @@ public class PauseMenu : MonoBehaviour
             Screen.height * 0.9f / 2 - (buttonHeight / 2) + offset,
             buttonWidth,
             buttonHeight
-            ), "RESUME!"))
+            ), "KEEP ADMIRING!"))
         {
             GetComponentInParent<PauseScript>().quitPause();
         }

@@ -6,9 +6,13 @@ public class PauseScript : MonoBehaviour {
 
 	private bool paused = false;
 
+    void Start(){
+
+    }
+
 	// Update is called once per frame
 	void Update () {
-		if ((Input.GetKeyDown(KeyCode.Escape) || Input.GetKeyDown(KeyCode.P)) ) {
+		if (Input.GetKeyDown(KeyCode.Escape) ) {
 			if (!paused) {
 				gameObject.AddComponent<PauseMenu>();
 				paused = true;

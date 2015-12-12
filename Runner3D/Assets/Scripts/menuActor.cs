@@ -4,6 +4,7 @@ using System.Collections;
 public class menuActor : MonoBehaviour {
 
     public bool isStart;
+    public bool isCredits;
     public bool isQuit;
 
     // Use this for initialization
@@ -21,11 +22,18 @@ public class menuActor : MonoBehaviour {
         
         if (isQuit) {
             Application.Quit();
+            GetComponent<Renderer>( ).material.color = Color.cyan;
         }
 
-        if (isStart) {
-            Application.LoadLevel(1);
-            GetComponent<Renderer>().material.color = Color.cyan;
+        if ( isStart ) {
+            Application.LoadLevel( 1 );
+            GetComponent<Renderer>( ).material.color = Color.cyan;
         }
+
+        if ( isCredits ) {
+            Application.LoadLevel( 2 );
+            GetComponent<Renderer>( ).material.color = Color.cyan;
+        }
+
     } 
 }
