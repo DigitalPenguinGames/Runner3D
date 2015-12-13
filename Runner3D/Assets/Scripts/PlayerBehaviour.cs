@@ -64,7 +64,7 @@ public class PlayerBehaviour : MonoBehaviour
 
     void FixedUpdate()
     {
-
+		if (cam.GetComponent<CameraMovement>().movingOrRotating()) return;
         float moveHorizontal = Input.GetAxis("Horizontal");
         float moveVertical = Input.GetAxis("Vertical");
 
