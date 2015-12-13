@@ -35,7 +35,7 @@ public class DeathMenu : MonoBehaviour {
                 buttonHeight
                 ) , ( Texture2D ) Resources.Load( "keepPlayingButton" ) ) ) {
                 
-                GetComponentInParent<PauseScript>().quitPause();
+                GetComponentInParent<PauseScript>().quitDeath();
             }
 
             if (GUI.Button(new Rect(
