@@ -10,6 +10,7 @@ public class Spawner : MonoBehaviour {
 	public bool tutorial = true;
 	public float tutorialTime = 3;
 
+	public GameObject coin;
 	private ObstaclePattern[] obstacles;
 	private float currentDificulty = 0;
 
@@ -52,6 +53,22 @@ public class Spawner : MonoBehaviour {
 			else {
 				Debug.Log ("FINITO");
 				obstacles[Random.Range(0, obstacles.Length)].spawn(transform,lastPosition);
+				int random = Random.Range(0, 2);
+				bool spawnCoin = (random == 0);
+				if (spawnCoin)
+				{ //coins 
+					random = Random.Range(0, 2);
+					Quaternion rotationQuat;
+					if (random % 2 == 0) rotationQuat = Quaternion.Euler(90, 0, 0);
+					else rotationQuat = Quaternion.Euler(0, 0, 90);
+					GameObject aux = new GameObject();
+					aux.transform.localPosition = new Vector3(0, 0, lastPosition);
+					
+					GameObject mycoin = Instantiate(coin, new Vector3(0, 0.14f, lastPosition), rotationQuat) as GameObject;
+					aux.transform.SetParent(transform);
+					mycoin.transform.SetParent(aux.transform);
+					
+				}
 			}
 		}
 	}
