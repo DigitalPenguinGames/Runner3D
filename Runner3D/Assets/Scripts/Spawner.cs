@@ -13,7 +13,7 @@ public class Spawner : MonoBehaviour {
 	private ObstaclePattern[] obstacles;
 	private float currentDificulty = 0;
 
-	private int tutorialIndex = 0;
+	public int tutorialIndex = 0;
 	private float tutorialElapsed = 0;
 
 	void Start() {
@@ -38,16 +38,20 @@ public class Spawner : MonoBehaviour {
 					touched = false;
 
 					obstacles[tutorialIndex].spawn(transform,lastPosition);
+					Debug.Log(obstacles[tutorialIndex].description);
 					++tutorialIndex;
 					if (tutorialIndex >= obstacles.Length) tutorial = false;
 					tutorialElapsed = tutorialTime;
+
+
 				}
 				else {
 					obstacles[0].spawn(transform,lastPosition);
 				}
 			}
 			else {
-				obstacles[Random.Range(0, obstacles.Length)].spawn(transform,lastPosition);
+				Debug.Log ("FINITO");
+				//obstacles[Random.Range(0, obstacles.Length)].spawn(transform,lastPosition);
 			}
 		}
 	}

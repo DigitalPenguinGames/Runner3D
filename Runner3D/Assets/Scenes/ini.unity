@@ -1548,6 +1548,9 @@ GameObject:
   - 114: {fileID: 1719749355}
   - 114: {fileID: 1719749354}
   - 114: {fileID: 1719749356}
+  - 114: {fileID: 1719749359}
+  - 114: {fileID: 1719749358}
+  - 114: {fileID: 1719749357}
   m_Layer: 0
   m_Name: Spawner
   m_TagString: Untagged
@@ -1730,11 +1733,57 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   indexTutorial: 7
-  description: 
+  description: double camera change
   obstacles:
   - {fileID: 114236, guid: d44954c37cf7e2242bb7c03312f82abe, type: 2}
   - {fileID: 177194, guid: 63d379750344a514488327d7a15daae2, type: 2}
   dificulty: 6
+--- !u!114 &1719749357
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1719749345}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a63a42f3f1f5ad4291973263f4a5d5c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  indexTutorial: 10
+  description: enemy3d jump enemy2d
+  obstacles: []
+  dificulty: 7
+--- !u!114 &1719749358
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1719749345}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a63a42f3f1f5ad4291973263f4a5d5c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  indexTutorial: 9
+  description: enemy2D
+  obstacles: []
+  dificulty: 3
+--- !u!114 &1719749359
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1719749345}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a63a42f3f1f5ad4291973263f4a5d5c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  indexTutorial: 8
+  description: enemy3D
+  obstacles:
+  - {fileID: 171044, guid: 96353fd08d449b74a8d3804b35a96402, type: 2}
+  dificulty: 3
 --- !u!1 &1736431575
 GameObject:
   m_ObjectHideFlags: 0
