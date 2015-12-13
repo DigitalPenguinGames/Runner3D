@@ -1587,6 +1587,7 @@ MonoBehaviour:
   startToSpawn: 16
   tutorial: 1
   tutorialTime: 7
+  tutorialIndex: 0
 --- !u!114 &1719749348
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1751,7 +1752,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   indexTutorial: 10
   description: enemy3d jump enemy2d
-  obstacles: []
+  obstacles:
+  - {fileID: 171044, guid: 96353fd08d449b74a8d3804b35a96402, type: 2}
+  - {fileID: 174330, guid: acbbdfaac26ab4740896b2fa992d6fbc, type: 2}
+  - {fileID: 158102, guid: 954df064e9f19f948a266c681edac98e, type: 2}
   dificulty: 7
 --- !u!114 &1719749358
 MonoBehaviour:
@@ -1766,7 +1770,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   indexTutorial: 9
   description: enemy2D
-  obstacles: []
+  obstacles:
+  - {fileID: 174330, guid: acbbdfaac26ab4740896b2fa992d6fbc, type: 2}
+  - {fileID: 158102, guid: 954df064e9f19f948a266c681edac98e, type: 2}
   dificulty: 3
 --- !u!114 &1719749359
 MonoBehaviour:
@@ -1782,6 +1788,7 @@ MonoBehaviour:
   indexTutorial: 8
   description: enemy3D
   obstacles:
+  - {fileID: 174330, guid: acbbdfaac26ab4740896b2fa992d6fbc, type: 2}
   - {fileID: 171044, guid: 96353fd08d449b74a8d3804b35a96402, type: 2}
   dificulty: 3
 --- !u!1 &1736431575

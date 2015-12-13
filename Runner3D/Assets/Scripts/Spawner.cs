@@ -51,7 +51,7 @@ public class Spawner : MonoBehaviour {
 			}
 			else {
 				Debug.Log ("FINITO");
-				//obstacles[Random.Range(0, obstacles.Length)].spawn(transform,lastPosition);
+				obstacles[Random.Range(0, obstacles.Length)].spawn(transform,lastPosition);
 			}
 		}
 	}
