@@ -2059,6 +2059,60 @@ MonoBehaviour:
   blurAndFlaresShader: {fileID: 4800000, guid: be6e39cf196f146d5be72fbefb18ed75, type: 3}
   brightPassFilterShader: {fileID: 4800000, guid: 0aeaa4cb29f5d4e9c8455f04c8575c8c,
     type: 3}
+--- !u!1001 &1914641124
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 450100, guid: d69bf87dc5d15364eaa0e751bd311fc6, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: -.2882635
+      objectReference: {fileID: 0}
+    - target: {fileID: 450100, guid: d69bf87dc5d15364eaa0e751bd311fc6, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 450100, guid: d69bf87dc5d15364eaa0e751bd311fc6, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 5.54619265
+      objectReference: {fileID: 0}
+    - target: {fileID: 450100, guid: d69bf87dc5d15364eaa0e751bd311fc6, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: -.707106829
+      objectReference: {fileID: 0}
+    - target: {fileID: 450100, guid: d69bf87dc5d15364eaa0e751bd311fc6, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 450100, guid: d69bf87dc5d15364eaa0e751bd311fc6, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 450100, guid: d69bf87dc5d15364eaa0e751bd311fc6, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: .707106829
+      objectReference: {fileID: 0}
+    - target: {fileID: 450100, guid: d69bf87dc5d15364eaa0e751bd311fc6, type: 2}
+      propertyPath: m_RootOrder
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 19839906, guid: d69bf87dc5d15364eaa0e751bd311fc6, type: 2}
+      propertyPath: looping
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 19839906, guid: d69bf87dc5d15364eaa0e751bd311fc6, type: 2}
+      propertyPath: lengthInSec
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 19839906, guid: d69bf87dc5d15364eaa0e751bd311fc6, type: 2}
+      propertyPath: EmissionModule.cnt0
+      value: 150
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: d69bf87dc5d15364eaa0e751bd311fc6, type: 2}
+  m_IsPrefabParent: 0
 --- !u!1 &1935846401
 GameObject:
   m_ObjectHideFlags: 0
