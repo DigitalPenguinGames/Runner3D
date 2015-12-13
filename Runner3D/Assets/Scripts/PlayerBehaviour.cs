@@ -22,6 +22,8 @@ public class PlayerBehaviour : MonoBehaviour
     public float playerMaxSpeed = 0.06f;
     public float playerAcceleration = 0.051f;
 
+	public int numberOfCoinsOnCollision = 10;
+
     int getCoins() {
         return coins;
     }
@@ -62,7 +64,7 @@ public class PlayerBehaviour : MonoBehaviour
 
     void FixedUpdate()
     {
-
+		if (cam.GetComponent<CameraMovement>().movingOrRotating()) return;
         float moveHorizontal = Input.GetAxis("Horizontal");
         float moveVertical = Input.GetAxis("Vertical");
 
@@ -190,32 +192,29 @@ public class PlayerBehaviour : MonoBehaviour
             if (other.gameObject.tag == "cameraDependentObstacle3D") {
 
                 if (cam.GetComponent<CameraMovement>().cLooking == Looking.l3D) {
-                    spawner.touched = true;
-
-                    other.enabled = false;
-                    audioScript.playCrashSound();
-                    cam.GetComponent<CameraMovement>().shake();
+					collision(spawner,other);
                 }
             }
             else if (other.gameObject.tag == "cameraDependentObstacleProfile") {
 
                 if (cam.GetComponent<CameraMovement>().cLooking == Looking.lProfile) {
-                    spawner.touched = true;
-
-                    other.enabled = false;
-                    audioScript.playCrashSound();
-                    cam.GetComponent<CameraMovement>().shake();
-
+					collision(spawner,other);
                 }
             }
             else if (other.gameObject.tag == "Obstacle")
             {
-                spawner.touched = true;
-
-                other.enabled = false;
-                audioScript.playCrashSound();
-                cam.GetComponent<CameraMovement>().shake();
+				collision(spawner,other);
             }
         }
     }
+
+	private void collision(Spawner spawner, Collider other) {
+		spawner.touched = true;
+		
+		other.enabled = false;
+		audioScript.playCrashSound();
+		cam.GetComponent<CameraMovement>().shake();
+		if (!spawner.tutorial) coins -= numberOfCoinsOnCollision;
+		if (coins < 0) Explode();
+	}
 }

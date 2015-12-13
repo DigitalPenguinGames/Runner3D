@@ -18,7 +18,8 @@ public class uiController : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		if (run) {
-			time += Time.deltaTime;
+			if (!Camera.main.GetComponent<CameraMovement>().movingOrRotating())
+				time += Time.deltaTime;
 			//coins += Time.deltaTime;
             coins = player.GetComponent<PlayerBehaviour>().coins;
 		}
