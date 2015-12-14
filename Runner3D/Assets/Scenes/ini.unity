@@ -454,7 +454,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 10
 --- !u!114 &348940343
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -476,6 +476,48 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 3a20ce6ed2de81144bc95c3d53cc51d6, type: 3}
   minVol: 1
   maxVol: 1
+--- !u!1001 &458077356
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 469034, guid: ba966dc615918b64dbd6cca2c06ad20a, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 6.09321499
+      objectReference: {fileID: 0}
+    - target: {fileID: 469034, guid: ba966dc615918b64dbd6cca2c06ad20a, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: -3.40109277
+      objectReference: {fileID: 0}
+    - target: {fileID: 469034, guid: ba966dc615918b64dbd6cca2c06ad20a, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 5.11077785
+      objectReference: {fileID: 0}
+    - target: {fileID: 469034, guid: ba966dc615918b64dbd6cca2c06ad20a, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 469034, guid: ba966dc615918b64dbd6cca2c06ad20a, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 469034, guid: ba966dc615918b64dbd6cca2c06ad20a, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 469034, guid: ba966dc615918b64dbd6cca2c06ad20a, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 469034, guid: ba966dc615918b64dbd6cca2c06ad20a, type: 2}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: ba966dc615918b64dbd6cca2c06ad20a, type: 2}
+  m_IsPrefabParent: 0
 --- !u!1 &500368589
 GameObject:
   m_ObjectHideFlags: 0
@@ -666,7 +708,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 7
 --- !u!1 &873109061
 GameObject:
   m_ObjectHideFlags: 0
@@ -785,7 +827,7 @@ Transform:
   - {fileID: 251069252}
   - {fileID: 873109062}
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 8
 --- !u!1 &1006278503
 GameObject:
   m_ObjectHideFlags: 0
@@ -1285,7 +1327,7 @@ Transform:
   m_LocalScale: {x: .300000012, y: .300000012, z: .300000012}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
 --- !u!114 &1169331955
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1351,7 +1393,7 @@ Transform:
   - {fileID: 1736431579}
   - {fileID: 231799165}
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 2
 --- !u!1 &1511831667
 GameObject:
   m_ObjectHideFlags: 0
@@ -1522,7 +1564,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 6
 --- !u!114 &1677854744
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1575,7 +1617,7 @@ Transform:
   m_Children:
   - {fileID: 1530262080}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 5
 --- !u!114 &1719749347
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1607,8 +1649,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   indexTutorial: 0
   description: Un salto
+  cartel: {fileID: 140904, guid: ba966dc615918b64dbd6cca2c06ad20a, type: 2}
   obstacles:
   - {fileID: 174330, guid: acbbdfaac26ab4740896b2fa992d6fbc, type: 2}
+  tutorial: 1
   dificulty: 1
 --- !u!114 &1719749349
 MonoBehaviour:
@@ -1623,8 +1667,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   indexTutorial: -1
   description: Solo suelo
+  cartel: {fileID: 0}
   obstacles:
   - {fileID: 166294, guid: dc01846ac83cb394796b563c5521db62, type: 2}
+  tutorial: 1
   dificulty: 0
 --- !u!114 &1719749350
 MonoBehaviour:
@@ -1639,10 +1685,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   indexTutorial: 1
   description: TripleJump
+  cartel: {fileID: 0}
   obstacles:
   - {fileID: 174330, guid: acbbdfaac26ab4740896b2fa992d6fbc, type: 2}
   - {fileID: 174330, guid: acbbdfaac26ab4740896b2fa992d6fbc, type: 2}
   - {fileID: 174330, guid: acbbdfaac26ab4740896b2fa992d6fbc, type: 2}
+  tutorial: 1
   dificulty: 3
 --- !u!114 &1719749351
 MonoBehaviour:
@@ -1657,10 +1705,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   indexTutorial: 4
   description: dodge plus jump
+  cartel: {fileID: 0}
   obstacles:
   - {fileID: 177194, guid: 63d379750344a514488327d7a15daae2, type: 2}
   - {fileID: 174330, guid: acbbdfaac26ab4740896b2fa992d6fbc, type: 2}
   - {fileID: 147156, guid: fe26fc6716268a64bae8e40f50c6014b, type: 2}
+  tutorial: 1
   dificulty: 4
 --- !u!114 &1719749352
 MonoBehaviour:
@@ -1675,9 +1725,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   indexTutorial: 3
   description: four columns
+  cartel: {fileID: 0}
   obstacles:
   - {fileID: 147156, guid: fe26fc6716268a64bae8e40f50c6014b, type: 2}
   - {fileID: 177194, guid: 63d379750344a514488327d7a15daae2, type: 2}
+  tutorial: 1
   dificulty: 2
 --- !u!114 &1719749353
 MonoBehaviour:
@@ -1692,8 +1744,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   indexTutorial: 2
   description: Learning to dodge (one comun)
+  cartel: {fileID: 0}
   obstacles:
   - {fileID: 147156, guid: fe26fc6716268a64bae8e40f50c6014b, type: 2}
+  tutorial: 1
   dificulty: 1
 --- !u!114 &1719749354
 MonoBehaviour:
@@ -1708,9 +1762,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   indexTutorial: 6
   description: camera cahnge plus jump
+  cartel: {fileID: 0}
   obstacles:
   - {fileID: 114236, guid: d44954c37cf7e2242bb7c03312f82abe, type: 2}
   - {fileID: 174330, guid: acbbdfaac26ab4740896b2fa992d6fbc, type: 2}
+  tutorial: 1
   dificulty: 4
 --- !u!114 &1719749355
 MonoBehaviour:
@@ -1725,8 +1781,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   indexTutorial: 5
   description: chaging camera
+  cartel: {fileID: 0}
   obstacles:
   - {fileID: 114236, guid: d44954c37cf7e2242bb7c03312f82abe, type: 2}
+  tutorial: 1
   dificulty: 3
 --- !u!114 &1719749356
 MonoBehaviour:
@@ -1741,9 +1799,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   indexTutorial: 7
   description: double camera change
+  cartel: {fileID: 0}
   obstacles:
   - {fileID: 114236, guid: d44954c37cf7e2242bb7c03312f82abe, type: 2}
   - {fileID: 177194, guid: 63d379750344a514488327d7a15daae2, type: 2}
+  tutorial: 1
   dificulty: 6
 --- !u!114 &1719749357
 MonoBehaviour:
@@ -1758,10 +1818,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   indexTutorial: 10
   description: enemy3d jump enemy2d
+  cartel: {fileID: 0}
   obstacles:
   - {fileID: 171044, guid: 96353fd08d449b74a8d3804b35a96402, type: 2}
   - {fileID: 174330, guid: acbbdfaac26ab4740896b2fa992d6fbc, type: 2}
   - {fileID: 158102, guid: 954df064e9f19f948a266c681edac98e, type: 2}
+  tutorial: 1
   dificulty: 7
 --- !u!114 &1719749358
 MonoBehaviour:
@@ -1776,9 +1838,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   indexTutorial: 9
   description: enemy2D
+  cartel: {fileID: 0}
   obstacles:
   - {fileID: 174330, guid: acbbdfaac26ab4740896b2fa992d6fbc, type: 2}
   - {fileID: 158102, guid: 954df064e9f19f948a266c681edac98e, type: 2}
+  tutorial: 1
   dificulty: 3
 --- !u!114 &1719749359
 MonoBehaviour:
@@ -1793,9 +1857,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   indexTutorial: 8
   description: enemy3D
+  cartel: {fileID: 0}
   obstacles:
   - {fileID: 174330, guid: acbbdfaac26ab4740896b2fa992d6fbc, type: 2}
   - {fileID: 171044, guid: 96353fd08d449b74a8d3804b35a96402, type: 2}
+  tutorial: 1
   dificulty: 3
 --- !u!1 &1736431575
 GameObject:
@@ -2002,7 +2068,7 @@ Transform:
   m_Children:
   - {fileID: 1135583565}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
 --- !u!114 &1895836799
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2106,7 +2172,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 9
 --- !u!114 &1935846404
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -31,8 +31,9 @@ public class Spawner : MonoBehaviour {
 					if (touched) --tutorialIndex;
 					touched = false;
 
-					obstacles[tutorialIndex].spawn(transform,lastPosition);
-					//Debug.Log(obstacles[tutorialIndex].description);
+					obstacles[tutorialIndex].spawn(transform,lastPosition,true);
+					Debug.Log(obstacles[tutorialIndex].description);
+
 					++tutorialIndex;
 					if (tutorialIndex >= obstacles.Length) tutorial = false;
 					tutorialElapsed = tutorialTime;
@@ -40,12 +41,12 @@ public class Spawner : MonoBehaviour {
 
 				}
 				else {
-					obstacles[0].spawn(transform,lastPosition);
+					obstacles[0].spawn(transform,lastPosition,false);
 				}
 			}
 			else {
 				Debug.Log ("FINITO");
-				obstacles[Random.Range(0, obstacles.Length)].spawn(transform,lastPosition);
+				obstacles[Random.Range(0, obstacles.Length)].spawn(transform,lastPosition,false);
 				int random = Random.Range(0, 2);
 				bool spawnCoin = (random == 0);
 				if (spawnCoin) { //coins 
@@ -96,7 +97,7 @@ public class Spawner : MonoBehaviour {
 		foreach (Transform trans in transform) {
 			Destroy(trans.gameObject);
 		}
-		obstacles[0].spawn(transform,0);
+		obstacles[0].spawn(transform,0,false);
 		//obstacles[0].spawn(transform,getLastPosition());
 	}
 }
