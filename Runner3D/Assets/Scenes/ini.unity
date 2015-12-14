@@ -356,6 +356,48 @@ Canvas:
   m_OverridePixelPerfect: 0
   m_SortingLayerID: 0
   m_SortingOrder: 0
+--- !u!1001 &342231103
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 465558, guid: d81fb7e105a77ad47b17bdfb1ece901c, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: -1.06400001
+      objectReference: {fileID: 0}
+    - target: {fileID: 465558, guid: d81fb7e105a77ad47b17bdfb1ece901c, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 1.22599995
+      objectReference: {fileID: 0}
+    - target: {fileID: 465558, guid: d81fb7e105a77ad47b17bdfb1ece901c, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 5.46999979
+      objectReference: {fileID: 0}
+    - target: {fileID: 465558, guid: d81fb7e105a77ad47b17bdfb1ece901c, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 465558, guid: d81fb7e105a77ad47b17bdfb1ece901c, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 465558, guid: d81fb7e105a77ad47b17bdfb1ece901c, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 465558, guid: d81fb7e105a77ad47b17bdfb1ece901c, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 465558, guid: d81fb7e105a77ad47b17bdfb1ece901c, type: 2}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: d81fb7e105a77ad47b17bdfb1ece901c, type: 2}
+  m_IsPrefabParent: 0
 --- !u!1 &348940340
 GameObject:
   m_ObjectHideFlags: 0
@@ -476,48 +518,6 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 3a20ce6ed2de81144bc95c3d53cc51d6, type: 3}
   minVol: 1
   maxVol: 1
---- !u!1001 &458077356
-Prefab:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 469034, guid: ba966dc615918b64dbd6cca2c06ad20a, type: 2}
-      propertyPath: m_LocalPosition.x
-      value: 6.09321499
-      objectReference: {fileID: 0}
-    - target: {fileID: 469034, guid: ba966dc615918b64dbd6cca2c06ad20a, type: 2}
-      propertyPath: m_LocalPosition.y
-      value: -3.40109277
-      objectReference: {fileID: 0}
-    - target: {fileID: 469034, guid: ba966dc615918b64dbd6cca2c06ad20a, type: 2}
-      propertyPath: m_LocalPosition.z
-      value: 5.11077785
-      objectReference: {fileID: 0}
-    - target: {fileID: 469034, guid: ba966dc615918b64dbd6cca2c06ad20a, type: 2}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 469034, guid: ba966dc615918b64dbd6cca2c06ad20a, type: 2}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 469034, guid: ba966dc615918b64dbd6cca2c06ad20a, type: 2}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 469034, guid: ba966dc615918b64dbd6cca2c06ad20a, type: 2}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 469034, guid: ba966dc615918b64dbd6cca2c06ad20a, type: 2}
-      propertyPath: m_RootOrder
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_ParentPrefab: {fileID: 100100000, guid: ba966dc615918b64dbd6cca2c06ad20a, type: 2}
-  m_IsPrefabParent: 0
 --- !u!1 &500368589
 GameObject:
   m_ObjectHideFlags: 0
@@ -1649,7 +1649,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   indexTutorial: 0
   description: Un salto
-  cartel: {fileID: 140904, guid: ba966dc615918b64dbd6cca2c06ad20a, type: 2}
+  cartel: {fileID: 0}
   obstacles:
   - {fileID: 174330, guid: acbbdfaac26ab4740896b2fa992d6fbc, type: 2}
   tutorial: 1
