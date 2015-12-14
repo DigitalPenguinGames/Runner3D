@@ -7,7 +7,7 @@ public class ObstaclePattern : MonoBehaviour {
 	public string description;
 	public GameObject cartel;
 	public GameObject[] obstacles;
-	public bool tutorial;
+	public bool tutorial = true;
 	public float dificulty;
 
 	public void spawn(Transform parent, float iniPosition, bool inTutorial) {
