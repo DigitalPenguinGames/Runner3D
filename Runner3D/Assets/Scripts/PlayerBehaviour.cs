@@ -57,23 +57,83 @@ public class PlayerBehaviour : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
-    {
+     private float minSwipeDistX = Screen.width/8;
+     private float minSwipeDistY = Screen.width/10;
+              
+     /*private Vector2 startPos;
+     private float swipeValue;
+     private float swipeDistVertical;
+     private float swipeDistHorizontal;*/
 
-    }
+     void Update()   {
+         /*swipeValue = 0;
+         swipeDistVertical = 0;
+         swipeDistHorizontal = 0;
 
-    void FixedUpdate()
-    {
+        //#if UNITY_ANDROID
+         if (Input.touchCount > 0) {
+             
+             Touch touch = Input.touches[0];
+
+             switch (touch.phase)  {
+                 
+             case TouchPhase.Began:
+                 startPos = touch.position;
+                 break;
+
+             case TouchPhase.Moved:
+                     swipeDistVertical = (new Vector3(0, touch.position.y, 0) - new Vector3(0, startPos.y, 0)).magnitude;
+                     if (swipeDistVertical > minSwipeDistY) {
+                        swipeValue = Mathf.Sign(touch.position.y - startPos.y);
+                     }
+                     
+                     swipeDistHorizontal = (new Vector3(touch.position.x,0, 0) - new Vector3(startPos.x, 0, 0)).magnitude;
+                     if (swipeDistHorizontal > minSwipeDistX) {
+                         swipeValue = Mathf.Sign(touch.position.x - startPos.x);
+                         
+//                         if (swipeValue > 0)//right swipe
+  //                       else if (swipeValue < 0)//left swipe
+                     }
+                  break;
+
+             case TouchPhase.Ended:
+                     swipeDistVertical = (new Vector3(0, touch.position.y, 0) - new Vector3(0, startPos.y, 0)).magnitude;
+                     if (swipeDistVertical > minSwipeDistY) {
+                     //moveVertical = 1;
+                        swipeValue = Mathf.Sign(touch.position.y - startPos.y);
+                     }
+                     
+                     swipeDistHorizontal = (new Vector3(touch.position.x,0, 0) - new Vector3(startPos.x, 0, 0)).magnitude;
+                     if (swipeDistHorizontal > minSwipeDistX) {
+                         //moveHorizontal = 1; 
+                         swipeValue = Mathf.Sign(touch.position.x - startPos.x);
+                         
+//                         if (swipeValue > 0)//right swipe
+  //                       else if (swipeValue < 0)//left swipe
+                     }
+                 break;
+             }
+         }
+          */
+     }
+
+    void FixedUpdate() {
+
 		if (cam.GetComponent<CameraMovement>().movingOrRotating()) return;
         float moveHorizontal = Input.GetAxis("Horizontal");
         float moveVertical = Input.GetAxis("Vertical");
-
+        //if ( swipeValue > 0 && swipeDistHorizontal >= minSwipeDistX ) { moveHorizontal = 1; moveVertical = 0;}
+        //if ( swipeValue < 0 && swipeDistHorizontal >= minSwipeDistX ) { moveHorizontal = -1; moveVertical = 0;}
 		for (var i = 0; i < Input.touchCount; ++i) {
-			if (Input.GetTouch(i).phase == TouchPhase.Began) {
-				if (cam.GetComponent<CameraMovement>().cLooking == Looking.lProfile) moveVertical = 1;
-				else if (Input.GetTouch(i).position.x < Screen.width/3) moveHorizontal = -1; 
-				else if (Input.GetTouch(i).position.x < Screen.width*2/3) moveVertical = 1; 
-				else moveHorizontal = 1; 
+            if ( Input.GetTouch( i ).phase == TouchPhase.Began ) {
+                if ( cam.GetComponent<CameraMovement>( ).cLooking == Looking.lProfile ) moveVertical = 1;
+                else if ( Input.GetTouch( i ).position.x < Screen.width / 3 ) moveHorizontal = -1;
+                else if ( Input.GetTouch( i ).position.x < Screen.width * 2 / 3 ) moveVertical = 1;
+                else moveHorizontal = 1;
+            }
+            if (Input.GetTouch(i).phase == TouchPhase.Stationary) {
+				if (Input.GetTouch(i).position.x < Screen.width/3) moveHorizontal = -1; 
+                else if ( Input.GetTouch(i).position.x > Screen.width * 2/3 ) moveHorizontal = 1; 
 			}
 		}
 
@@ -109,7 +169,8 @@ public class PlayerBehaviour : MonoBehaviour
             {
                 vel.y -= gravity;
             }
-            else if (moveVertical != 0)
+            else if (moveVertical != 0 )
+            //else if(swipeValue > 0 && swipeDistVertical >= minSwipeDistY)
             {
                 audioScript.playJumpSound();
                 vel.y += jumpSpeed;
@@ -121,6 +182,7 @@ public class PlayerBehaviour : MonoBehaviour
 
 
             if (moveHorizontal > 0)
+            //if ( swipeValue > 0 && swipeDistHorizontal >= minSwipeDistX)
             {
                 vel.x += playerAcceleration;
                 if (vel.x > playerMaxSpeed)
@@ -129,6 +191,7 @@ public class PlayerBehaviour : MonoBehaviour
                 }
             }
             else if (moveHorizontal < 0)
+            //else if ( swipeValue < 0 && swipeDistHorizontal >= minSwipeDistX)
             {
                 vel.x -= playerAcceleration;
                 if (vel.x < -playerMaxSpeed)
@@ -218,3 +281,4 @@ public class PlayerBehaviour : MonoBehaviour
 		if (coins < 0) Explode();
 	}
 }
+

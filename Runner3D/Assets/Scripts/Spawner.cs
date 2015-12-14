@@ -32,7 +32,7 @@ public class Spawner : MonoBehaviour {
 					touched = false;
 
 					obstacles[tutorialIndex].spawn(transform,lastPosition);
-					Debug.Log(obstacles[tutorialIndex].description);
+					//Debug.Log(obstacles[tutorialIndex].description);
 					++tutorialIndex;
 					if (tutorialIndex >= obstacles.Length) tutorial = false;
 					tutorialElapsed = tutorialTime;
@@ -63,6 +63,12 @@ public class Spawner : MonoBehaviour {
 				}
 			}
 		}
+        /*if ( !Camera.main.GetComponent<CameraMovement>( ).movingOrRotating( ) ) {
+            foreach ( Transform trans in transform ) {
+                trans.Translate( 0 , 0 , -speed * Time.deltaTime );
+                if ( trans.position.z + 12 < 0 ) Destroy( trans.gameObject );
+            }
+        }*/
 	}
 
 	void FixedUpdate() {
