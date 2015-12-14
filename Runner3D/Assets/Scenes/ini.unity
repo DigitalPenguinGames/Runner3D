@@ -398,7 +398,7 @@ Prefab:
     - target: {fileID: 2394232, guid: d81fb7e105a77ad47b17bdfb1ece901c, type: 2}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 41ec30672dd67dc4abd5168c1c7db76d, type: 2}
+      objectReference: {fileID: 2100000, guid: 876ab97c2d64e5e4ba6acbbea9b2692e, type: 2}
     - target: {fileID: 2318072, guid: d81fb7e105a77ad47b17bdfb1ece901c, type: 2}
       propertyPath: m_Materials.Array.data[0]
       value: 
@@ -407,7 +407,50 @@ Prefab:
       propertyPath: m_Color.rgba
       value: 4278190080
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 2388514, guid: d81fb7e105a77ad47b17bdfb1ece901c, type: 2}
+      propertyPath: m_ReceiveShadows
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2388514, guid: d81fb7e105a77ad47b17bdfb1ece901c, type: 2}
+      propertyPath: m_CastShadows
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2388514, guid: d81fb7e105a77ad47b17bdfb1ece901c, type: 2}
+      propertyPath: m_UseLightProbes
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2388514, guid: d81fb7e105a77ad47b17bdfb1ece901c, type: 2}
+      propertyPath: m_ReflectionProbeUsage
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2318072, guid: d81fb7e105a77ad47b17bdfb1ece901c, type: 2}
+      propertyPath: m_ReceiveShadows
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2318072, guid: d81fb7e105a77ad47b17bdfb1ece901c, type: 2}
+      propertyPath: m_CastShadows
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2318072, guid: d81fb7e105a77ad47b17bdfb1ece901c, type: 2}
+      propertyPath: m_ReflectionProbeUsage
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2318072, guid: d81fb7e105a77ad47b17bdfb1ece901c, type: 2}
+      propertyPath: m_UseLightProbes
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2394232, guid: d81fb7e105a77ad47b17bdfb1ece901c, type: 2}
+      propertyPath: m_UseLightProbes
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2394232, guid: d81fb7e105a77ad47b17bdfb1ece901c, type: 2}
+      propertyPath: m_ReflectionProbeUsage
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 13639014, guid: d81fb7e105a77ad47b17bdfb1ece901c, type: 2}
+    - {fileID: 6483544, guid: d81fb7e105a77ad47b17bdfb1ece901c, type: 2}
+    - {fileID: 6433292, guid: d81fb7e105a77ad47b17bdfb1ece901c, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: d81fb7e105a77ad47b17bdfb1ece901c, type: 2}
   m_IsPrefabParent: 0
 --- !u!1 &348940340
