@@ -1156,7 +1156,7 @@ MonoBehaviour:
   playerVelocity: 0
   playerMaxSpeed: .0599999987
   playerAcceleration: .709999979
-  numberOfCoinsOnCollision: 10
+  numberOfCoinsOnCollision: 3
 --- !u!54 &1169331956
 Rigidbody:
   m_ObjectHideFlags: 0
