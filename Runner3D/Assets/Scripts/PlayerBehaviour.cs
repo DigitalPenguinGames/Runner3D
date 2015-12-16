@@ -122,6 +122,7 @@ public class PlayerBehaviour : MonoBehaviour
 		if (cam.GetComponent<CameraMovement>().movingOrRotating()) return;
         float moveHorizontal = Input.GetAxis("Horizontal");
         float moveVertical = Input.GetAxis("Vertical");
+        
         //if ( swipeValue > 0 && swipeDistHorizontal >= minSwipeDistX ) { moveHorizontal = 1; moveVertical = 0;}
         //if ( swipeValue < 0 && swipeDistHorizontal >= minSwipeDistX ) { moveHorizontal = -1; moveVertical = 0;}
 		for (var i = 0; i < Input.touchCount; ++i) {
@@ -149,6 +150,7 @@ public class PlayerBehaviour : MonoBehaviour
             }
             else if (moveVertical != 0)
             {
+            Debug.Log("JUMPIN!!!!");
                 audioScript.playJumpSound( );
                 vel.y += jumpSpeed;
             }
@@ -163,20 +165,18 @@ public class PlayerBehaviour : MonoBehaviour
 
         else
         {  //if camera 3D || camera vertical
-
+            
             //if (moveVertical != 0) vel.x = 0;
-            if (this.transform.position.y > initPosition.y)
-            {
+            if (this.transform.position.y > initPosition.y) {
                 vel.y -= gravity;
             }
             else if (moveVertical != 0 )
             //else if(swipeValue > 0 && swipeDistVertical >= minSwipeDistY)
             {
                 audioScript.playJumpSound();
-                vel.y += jumpSpeed;
+                vel.y = jumpSpeed;
             }
-            if (vel.y >= 1)
-            {
+            if (vel.y >= 1) {
                 vel.y = 1;
             }
 
@@ -226,6 +226,7 @@ public class PlayerBehaviour : MonoBehaviour
         if (finalPosition.x > 1) finalPosition.x = 1;
         if (finalPosition.x < -1) finalPosition.x = -1;
         if (finalPosition.y < initPosition.y) finalPosition.y = initPosition.y;
+
         this.transform.position = finalPosition;
     }
 
