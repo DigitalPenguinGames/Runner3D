@@ -150,9 +150,9 @@ public class PlayerBehaviour : MonoBehaviour
             }
             else if (moveVertical != 0)
             {
-            Debug.Log("JUMPIN!!!!");
+            //Debug.Log("JUMPIN!!!!");
                 audioScript.playJumpSound( );
-                vel.y += jumpSpeed;
+                vel.y = jumpSpeed;
             }
             if (vel.y >= 1)
             {
