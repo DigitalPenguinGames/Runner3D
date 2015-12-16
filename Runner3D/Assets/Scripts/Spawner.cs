@@ -51,6 +51,7 @@ public class Spawner : MonoBehaviour {
 			}
 			else {
 				currentDificulty += 0.1f;
+				lastDificulty -= currentDificulty*0.5f;
 				Debug.Log ("FINITO");
 				float posibleDificulty = 10000;
 				int index = 0;

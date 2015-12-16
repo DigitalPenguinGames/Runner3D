@@ -295,7 +295,7 @@ public class PlayerBehaviour : MonoBehaviour
 	public void reset() {
 		numberOfCoinsOnCollision= 1;
 		coins = 0;
-		transform.localPosition = initPosition;
+		transform.position = initPosition;
 	}
 }
 
