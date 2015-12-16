@@ -66,7 +66,7 @@ public class CameraMovement : MonoBehaviour {
 			rotating = true;
             this.GetComponent<Camera>().orthographic = false;
 		} else 
-         //if (Input.GetKeyDown(KeyCode.Alpha2)) {
+        // if (Input.GetKeyDown(KeyCode.Alpha2)) {
 	     if ( Input.GetKeyDown( KeyCode.Alpha2 ) || Mathf.Abs( Input.acceleration.x ) > 0.7 ) {
             if ( cLooking != Looking.lProfile ) lastMovement = 0;
             cLooking = Looking.lProfile;
