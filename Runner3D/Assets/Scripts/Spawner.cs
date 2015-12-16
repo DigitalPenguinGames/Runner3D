@@ -12,10 +12,15 @@ public class Spawner : MonoBehaviour {
 
 	public GameObject coin;
 	private ObstaclePattern[] obstacles;
-	private float currentDificulty = 0;
+	public float currentDificulty = 0;
+	public float lastDificulty = 0;
+	public float lastDificultyPattern = 0;
 
 	public int tutorialIndex = 0;
 	private float tutorialElapsed = 0;
+
+
+
 
 	void Start() {
 		obstacles = gameObject.GetComponents<ObstaclePattern>();
@@ -45,8 +50,17 @@ public class Spawner : MonoBehaviour {
 				}
 			}
 			else {
+				currentDificulty += 0.1f;
 				Debug.Log ("FINITO");
-				obstacles[Random.Range(0, obstacles.Length)].spawn(transform,lastPosition,false);
+				float posibleDificulty = 10000;
+				int index = 0;
+				while (lastDificulty + posibleDificulty > currentDificulty + 2) {
+					index = Random.Range(0, obstacles.Length);
+					posibleDificulty = obstacles[index].dificulty;
+				}
+				if (posibleDificulty == -1) lastDificulty -= lastDificultyPattern;
+				lastDificultyPattern = posibleDificulty;
+				obstacles[index].spawn(transform,lastPosition,false);
 				int random = Random.Range(0, 2);
 				bool spawnCoin = (random == 0);
 				if (spawnCoin) { //coins 
