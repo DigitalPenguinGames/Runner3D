@@ -15,14 +15,14 @@ public class PlayerBehaviour : MonoBehaviour
     public float gravity = 0.1f;
     public float movementSpeed = 0.01f;
     public float rotationSpeed = 500.0f;
-    public ParticleSystem explosion;
-
+	public ParticleSystem explosion;
+	public ParticleSystem deathExplosion;
 
     public float playerVelocity = 0.0f;
     public float playerMaxSpeed = 0.06f;
     public float playerAcceleration = 0.051f;
 
-	public int numberOfCoinsOnCollision = 10;
+	public int numberOfCoinsOnCollision = 1;
 
     int getCoins() {
         return coins;
@@ -277,8 +277,18 @@ public class PlayerBehaviour : MonoBehaviour
 		other.enabled = false;
 		audioScript.playCrashSound();
 		cam.GetComponent<CameraMovement>().shake();
-		if (!spawner.tutorial) coins -= numberOfCoinsOnCollision;
-		if (coins < 0) Explode();
+		if (!spawner.tutorial) {
+			coins -= numberOfCoinsOnCollision;
+			++numberOfCoinsOnCollision;
+		}
+		if (coins < 0) deathExplosions();
+	}
+
+	public void deathExplosions() {
+		deathExplosion.transform.position = transform.position;
+		deathExplosion.time = 0;
+		deathExplosion.startDelay = 0.01f;
+		deathExplosion.Play();
 	}
 }
 

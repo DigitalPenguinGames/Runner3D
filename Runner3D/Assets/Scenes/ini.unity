@@ -379,7 +379,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 9
 --- !u!114 &348940343
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -591,7 +591,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 6
 --- !u!1 &873109061
 GameObject:
   m_ObjectHideFlags: 0
@@ -710,7 +710,7 @@ Transform:
   - {fileID: 251069252}
   - {fileID: 873109062}
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 7
 --- !u!1 &1006278503
 GameObject:
   m_ObjectHideFlags: 0
@@ -1135,7 +1135,7 @@ Transform:
   m_LocalScale: {x: .300000012, y: .300000012, z: .300000012}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
 --- !u!114 &1169331955
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1153,6 +1153,7 @@ MonoBehaviour:
   movementSpeed: 10
   rotationSpeed: 500
   explosion: {fileID: 527209525}
+  deathExplosion: {fileID: 1682681012}
   playerVelocity: 0
   playerMaxSpeed: .0599999987
   playerAcceleration: .709999979
@@ -1282,6 +1283,48 @@ MonoBehaviour:
 Transform:
   m_PrefabParentObject: {fileID: 458164, guid: dc01846ac83cb394796b563c5521db62, type: 2}
   m_PrefabInternal: {fileID: 1807535908}
+--- !u!1001 &1571079674
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 450100, guid: d69bf87dc5d15364eaa0e751bd311fc6, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 7.98135948
+      objectReference: {fileID: 0}
+    - target: {fileID: 450100, guid: d69bf87dc5d15364eaa0e751bd311fc6, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: -.254405022
+      objectReference: {fileID: 0}
+    - target: {fileID: 450100, guid: d69bf87dc5d15364eaa0e751bd311fc6, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 2.64722347
+      objectReference: {fileID: 0}
+    - target: {fileID: 450100, guid: d69bf87dc5d15364eaa0e751bd311fc6, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: -.707106829
+      objectReference: {fileID: 0}
+    - target: {fileID: 450100, guid: d69bf87dc5d15364eaa0e751bd311fc6, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 450100, guid: d69bf87dc5d15364eaa0e751bd311fc6, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 450100, guid: d69bf87dc5d15364eaa0e751bd311fc6, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: .707106829
+      objectReference: {fileID: 0}
+    - target: {fileID: 450100, guid: d69bf87dc5d15364eaa0e751bd311fc6, type: 2}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: d69bf87dc5d15364eaa0e751bd311fc6, type: 2}
+  m_IsPrefabParent: 0
 --- !u!1 &1677854741
 GameObject:
   m_ObjectHideFlags: 0
@@ -1342,7 +1385,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 5
 --- !u!114 &1677854744
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1355,6 +1398,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timer: 0
+--- !u!198 &1682681012 stripped
+ParticleSystem:
+  m_PrefabParentObject: {fileID: 19839906, guid: d69bf87dc5d15364eaa0e751bd311fc6,
+    type: 2}
+  m_PrefabInternal: {fileID: 1571079674}
 --- !u!1 &1719749345
 GameObject:
   m_ObjectHideFlags: 0
@@ -1395,7 +1443,7 @@ Transform:
   m_Children:
   - {fileID: 1530262080}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
 --- !u!114 &1719749347
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1771,7 +1819,7 @@ Transform:
   m_Children:
   - {fileID: 1135583565}
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 2
 --- !u!114 &1895836799
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1875,7 +1923,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 8
 --- !u!114 &1935846404
 MonoBehaviour:
   m_ObjectHideFlags: 0
