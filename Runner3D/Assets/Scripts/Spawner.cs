@@ -58,6 +58,7 @@ public class Spawner : MonoBehaviour {
 					index = Random.Range(0, obstacles.Length);
 					posibleDificulty = obstacles[index].dificulty;
 				}
+				lastDificulty += posibleDificulty; 
 				if (posibleDificulty == -1) lastDificulty -= lastDificultyPattern;
 				lastDificultyPattern = posibleDificulty;
 				obstacles[index].spawn(transform,lastPosition,false);
@@ -108,6 +109,7 @@ public class Spawner : MonoBehaviour {
 	}
 
 	public void clearRoad() {
+		currentDificulty = 0;
 		foreach (Transform trans in transform) {
 			Destroy(trans.gameObject);
 		}

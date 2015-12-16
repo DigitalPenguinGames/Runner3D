@@ -1157,7 +1157,7 @@ MonoBehaviour:
   playerVelocity: 0
   playerMaxSpeed: .0599999987
   playerAcceleration: .709999979
-  numberOfCoinsOnCollision: 3
+  numberOfCoinsOnCollision: 1
 --- !u!54 &1169331956
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1461,6 +1461,9 @@ MonoBehaviour:
   tutorial: 1
   tutorialTime: 7
   coin: {fileID: 162854, guid: d45eaf0c22fd87d42aeef2812c4c8ff5, type: 2}
+  currentDificulty: 0
+  lastDificulty: 0
+  lastDificultyPattern: 0
   tutorialIndex: 0
 --- !u!114 &1719749348
 MonoBehaviour:
@@ -1497,7 +1500,7 @@ MonoBehaviour:
   obstacles:
   - {fileID: 166294, guid: dc01846ac83cb394796b563c5521db62, type: 2}
   tutorial: 1
-  dificulty: 0
+  dificulty: -1
 --- !u!114 &1719749350
 MonoBehaviour:
   m_ObjectHideFlags: 0

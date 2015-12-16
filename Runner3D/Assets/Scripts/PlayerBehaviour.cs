@@ -291,5 +291,11 @@ public class PlayerBehaviour : MonoBehaviour
 		deathExplosion.startDelay = 0.01f;
 		deathExplosion.Play();
 	}
+
+	public void reset() {
+		numberOfCoinsOnCollision= 1;
+		coins = 0;
+		transform.localPosition = initPosition;
+	}
 }
 

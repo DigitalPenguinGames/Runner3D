@@ -49,7 +49,7 @@ public class PauseScript : MonoBehaviour {
 		Time.timeScale = 1;
 		dead = false;
 		spawner.GetComponent<Spawner>().clearRoad();
-		player.GetComponent<PlayerBehaviour>().coins = 0;
+		player.GetComponent<PlayerBehaviour>().reset();
 		GetComponent<uiController>().time = 0;
 	}
 }
