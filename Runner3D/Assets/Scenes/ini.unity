@@ -1424,6 +1424,7 @@ GameObject:
   - 114: {fileID: 1719749359}
   - 114: {fileID: 1719749358}
   - 114: {fileID: 1719749357}
+  - 114: {fileID: 1719749360}
   m_Layer: 0
   m_Name: Spawner
   m_TagString: Untagged
@@ -1692,6 +1693,23 @@ MonoBehaviour:
   - {fileID: 171044, guid: 96353fd08d449b74a8d3804b35a96402, type: 2}
   tutorial: 1
   dificulty: 3
+--- !u!114 &1719749360
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1719749345}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a63a42f3f1f5ad4291973263f4a5d5c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  indexTutorial: 11
+  description: last one have coins
+  cartel: {fileID: 109742, guid: c53dcee521037234eb27b583938d1e34, type: 2}
+  obstacles: []
+  tutorial: 1
+  dificulty: 0
 --- !u!1001 &1807535908
 Prefab:
   m_ObjectHideFlags: 0
