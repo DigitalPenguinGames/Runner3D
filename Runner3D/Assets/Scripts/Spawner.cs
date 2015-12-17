@@ -34,13 +34,18 @@ public class Spawner : MonoBehaviour {
 			if (tutorial) {
 				if (tutorialElapsed < 0){
 					if (touched) --tutorialIndex;
+					if (tutorialIndex >= obstacles.Length) {
+						tutorial = false;
+						GameObject.FindObjectOfType<uiController>().time = 0;
+						return;
+					}
 					touched = false;
 
 					obstacles[tutorialIndex].spawn(transform,lastPosition,true);
 					Debug.Log(obstacles[tutorialIndex].description);
 
 					++tutorialIndex;
-					if (tutorialIndex >= obstacles.Length) tutorial = false;
+
 					tutorialElapsed = tutorialTime;
 
 
